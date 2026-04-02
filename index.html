@@ -802,6 +802,56 @@
     @media (max-width: 900px) {
       .footer-inner { grid-template-columns: 1fr; }
     }
+    /* --- Publications additions --- */
+    .pub-year {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pub-year:first-child { margin-top: 0; }
+
+    .pub-journal {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .pub-if {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: var(--bg-alt);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
+
+    .show-more-btn {
+      display: block;
+      margin: 2rem auto 0;
+      padding: 12px 32px;
+      background: var(--bg-alt);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .show-more-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .pub-hidden { display: none; }
   </style>
 </head>
 <body>
@@ -860,7 +910,7 @@
   <div class="stats-banner">
     <div class="stats-grid">
       <div class="stat-item fade-in">
-        <div class="stat-number" data-target="50">0</div>
+        <div class="stat-number" data-target="36">0</div>
         <div class="stat-label">Publications</div>
       </div>
       <div class="stat-item fade-in">
@@ -969,55 +1019,429 @@
     <div class="container">
       <div class="section-title fade-in">
         <h2>Publications</h2>
-        <p>Selected recent publications from our lab</p>
+        <p>Peer-reviewed publications from our lab</p>
       </div>
 
       <div class="pub-list">
+        <div class="pub-year fade-in">2025</div>
+
         <div class="pub-card fade-in">
           <div>
-            <h4>Placeholder: Neural correlates of fear extinction in PTSD patients</h4>
+            <h4>Dissecting Fear and Emotional Pain in PTSD: From Symptom Networks to Neural Signatures</h4>
             <div class="pub-meta">
-              <span><i class="ri-user-line"></i> Ben-Zion Z, et al.</span>
-              <span><i class="ri-book-line"></i> Journal Name</span>
-              <span><i class="ri-calendar-line"></i> 2025</span>
+              <span>Ben-Zion Z, Basol E, Simon AJ, et al.</span><br>
+              <span class="pub-journal">Biological Psychiatry</span><span class="pub-if">IF 10.4</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.biopsych.2025.11.016" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Psychedelics and Collective Trauma: Multisystemic Resilience and Recovery Pathways Among Nova Festival Survivors</h4>
+            <div class="pub-meta">
+              <span>Simon G, Gal-Birman M, Tadmor N, Halperin D, &amp; Ben-Zion Z.</span><br>
+              <span class="pub-journal">European Journal of Psychotraumatology</span><span class="pub-if">IF 4.9</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1080/20008066.2025.2582303" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Why We Need Mandatory Safeguards for Emotionally Responsive AI</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z.</span><br>
+              <span class="pub-journal">Nature</span><span class="pub-if">IF 55.4</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1038/d41586-025-02031-w" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Brain Network Dynamics Following Induced Acute Stress: A Neural Marker of Psychological Vulnerability</h4>
+            <div class="pub-meta">
+              <span>Segal A, Charquero-Ballester M, ..., Ben-Zion Z, ..., Kringelbach ML.</span><br>
+              <span class="pub-journal">Psychological Medicine</span><span class="pub-if">IF 6.5</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1017/S0033291725100913" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Assessing and Alleviating State Anxiety in Large Language Models</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z, Witte K, Jagadish AK, et al.</span><br>
+              <span class="pub-journal">npj Digital Medicine</span><span class="pub-if">IF 15.2</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1038/s41746-025-01512-6" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Connectome-Based Prediction of PTSD Development in Recent Trauma Survivors</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z*, Simon AJ*, Rosenblatt M, et al.</span><br>
+              <span class="pub-journal">JAMA Network Open</span><span class="pub-if">IF 11.0</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1001/jamanetworkopen.2025.0331" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Representation of Anticipated Rewards and Punishments in the Human Brain</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z &amp; Levy I.</span><br>
+              <span class="pub-journal">Annual Review of Psychology</span><span class="pub-if">IF 27.9</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1146/annurev-psych-022324-042614" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-year fade-in">2024</div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Neuroimaging of PTSD in Adults and Youth: Progress Over the Last Decade</h4>
+            <div class="pub-meta">
+              <span>Hinojosa C, George GC, &amp; Ben-Zion Z.</span><br>
+              <span class="pub-journal">Molecular Psychiatry</span><span class="pub-if">IF 11.1</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1038/s41380-024-02558-w" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Structural Neuroimaging of Hippocampus and Amygdala Subregions in PTSD: A Scoping Review</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z, Korem N, Fine N, et al.</span><br>
+              <span class="pub-journal">Biological Psychiatry: Global Open Science</span><span class="pub-if">IF 4.0</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.bpsgos.2023.07.001" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Transitions Between Emotional States in Trauma-Exposed Individuals With and Without PTSD</h4>
+            <div class="pub-meta">
+              <span>Korem N, Duek O, Spiller TR, Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">JAMA Network Open</span><span class="pub-if">IF 10.5</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1001/jamanetworkopen.2024.6813" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <!-- Hidden publications (shown on click) -->
+        <div class="pub-hidden" id="morePubs">
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Greater Early Post-Trauma Activation in Right Inferior Frontal Gyrus Predicts Recovery from PTSD</h4>
+            <div class="pub-meta">
+              <span>Sheynin J, Lokshina Y, ..., Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">Biological Psychiatry: CNNI</span><span class="pub-if">IF 6.1</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.bpsc.2023.07.002" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Post-Treatment Alterations in White Matter Integrity in PTSD</h4>
+            <div class="pub-meta">
+              <span>Korem N, Duek O, Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">Psychiatry Research: Neuroimaging</span><span class="pub-if">IF 2.2</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.pscychresns.2024.111864" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Unraveling PTSD: Symptom Cluster Change During and 1 Year After Veterans' Residential Treatment</h4>
+            <div class="pub-meta">
+              <span>Gross GM, Spiller TR, Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">Psychological Trauma</span><span class="pub-if">IF 5.6</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1037/tra0001734" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Effects of a Dissociative Drug on Fronto-Limbic Resting-State Functional Connectivity in PTSD</h4>
+            <div class="pub-meta">
+              <span>Danb&ouml;ck SK, Duek O, Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">Psychopharmacology</span><span class="pub-if">IF 3.6</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1007/s00213-023-06479-4" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Interdisciplinary and Collaborative Training in Neuroscience: Insights from the Human Brain Project</h4>
+            <div class="pub-meta">
+              <span>Geminiani A, ..., Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">Neuroinformatics</span><span class="pub-if">IF 3.3</span>
             </div>
           </div>
           <a href="#" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
+
+        <div class="pub-year fade-in">2023</div>
+
         <div class="pub-card fade-in">
           <div>
-            <h4>Placeholder: Computational modeling of stress resilience trajectories</h4>
+            <h4>Are We There Yet? Evaluating Neuroimaging-Based Biotypes of Psychiatric Vulnerability After Trauma</h4>
             <div class="pub-meta">
-              <span><i class="ri-user-line"></i> Ben-Zion Z, et al.</span>
-              <span><i class="ri-book-line"></i> Journal Name</span>
-              <span><i class="ri-calendar-line"></i> 2025</span>
+              <span>Ben-Zion Z, Spiller TR, Keynan JN, et al.</span><br>
+              <span class="pub-journal">The American Journal of Psychiatry</span><span class="pub-if">IF 16.9</span>
             </div>
           </div>
-          <a href="#" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+          <a href="https://doi.org/10.1176/appi.ajp.20220271" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
+
         <div class="pub-card fade-in">
           <div>
-            <h4>Placeholder: Structural brain changes following trauma exposure</h4>
+            <h4>Neuroscientific Account of Guilt- and Shame-Driven PTSD Phenotypes</h4>
             <div class="pub-meta">
-              <span><i class="ri-user-line"></i> Ben-Zion Z, et al.</span>
-              <span><i class="ri-book-line"></i> Journal Name</span>
-              <span><i class="ri-calendar-line"></i> 2024</span>
+              <span>Fine NB*, Ben-Zion Z*, Biran I, &amp; Hendler T.</span><br>
+              <span class="pub-journal">European Journal of Psychotraumatology</span><span class="pub-if">IF 4.9</span>
             </div>
           </div>
-          <a href="#" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+          <a href="https://doi.org/10.1080/20008066.2023.2202060" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
+
         <div class="pub-card fade-in">
           <div>
-            <h4>Placeholder: Machine learning prediction of PTSD onset</h4>
+            <h4>Limbic Self-Neuromodulation as a Novel Treatment for Emotional Dysregulation in PMDD</h4>
             <div class="pub-meta">
-              <span><i class="ri-user-line"></i> Ben-Zion Z, et al.</span>
-              <span><i class="ri-book-line"></i> Journal Name</span>
-              <span><i class="ri-calendar-line"></i> 2024</span>
+              <span>Tene O, ..., Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">Psychiatry and Clinical Neurosciences</span><span class="pub-if">IF 7.5</span>
             </div>
           </div>
-          <a href="#" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+          <a href="https://doi.org/10.1111/pcn.13574" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Correlates of Avoidance Coping in Trauma-Exposed U.S. Military Veterans</h4>
+            <div class="pub-meta">
+              <span>Korem N, Ben-Zion Z, Spiller TR, et al.</span><br>
+              <span class="pub-journal">Journal of Affective Disorders</span><span class="pub-if">IF 5.4</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.jad.2023.07.036" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Changes in Mental Health Among U.S. Military Veterans During the COVID-19 Pandemic</h4>
+            <div class="pub-meta">
+              <span>Spiller TR, ..., Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">Journal of Psychiatric Research</span><span class="pub-if">IF 4.3</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.jpsychires.2023.08.003" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-year fade-in">2022</div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Longitudinal Volumetric Evaluation of Hippocampus and Amygdala Subregions in Recent Trauma Survivors</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z, Korem N, Spiller TR, et al.</span><br>
+              <span class="pub-journal">Molecular Psychiatry</span><span class="pub-if">IF 11.1</span>
+            </div>
+          </div>
+          <a href="https://www.nature.com/articles/s41380-022-01842-x" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Assessment of Early Neurocognitive Functioning Increases the Accuracy of Predicting Chronic PTSD Risk</h4>
+            <div class="pub-meta">
+              <span>Schultebraucks K*, Ben-Zion Z*, et al.</span><br>
+              <span class="pub-journal">Molecular Psychiatry</span><span class="pub-if">IF 11.1</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1038/s41380-022-01445-6" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Mapping the Availability of Translated Versions of PTSD Screening Questionnaires</h4>
+            <div class="pub-meta">
+              <span>Hoffman J*, Ben-Zion Z*, et al.</span><br>
+              <span class="pub-journal">European Journal of Psychotraumatology</span><span class="pub-if">IF 4.9</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1080/20008066.2022.2143019" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Emotional Numbing in PTSD Is Associated with Lower Amygdala Reactivity to Pain</h4>
+            <div class="pub-meta">
+              <span>Korem N, Duek O, Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">Neuropsychopharmacology</span><span class="pub-if">IF 7.3</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1038/s41386-022-01405-2" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Delirium Screening with Machine Learning Based on Routinely Collected Nursing Data</h4>
+            <div class="pub-meta">
+              <span>Spiller TR, ..., Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">Journal of Psychiatric Research</span><span class="pub-if">IF 4.3</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.jpsychires.2022.10.018" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-year fade-in">2021</div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Neural Responsivity to Reward vs. Punishment Shortly After Trauma Predicts Long-Term PTSD Development</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z, Shany O, Admon R, et al.</span><br>
+              <span class="pub-journal">Biological Psychiatry: CNNI</span><span class="pub-if">IF 6.1</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.bpsc.2021.09.001" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Social Robots for Supporting PTSD Diagnosis and Treatment</h4>
+            <div class="pub-meta">
+              <span>Laban G*, Ben-Zion Z*, &amp; Cross ES.</span><br>
+              <span class="pub-journal">Frontiers in Psychiatry</span><span class="pub-if">IF 5.4</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.3389/fpsyt.2021.752874" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>COVID-19 Changes in Mood and Anxiety Mediate Resilience and Symptoms in Sexual Assault Survivors</h4>
+            <div class="pub-meta">
+              <span>Armon DB, Fine NB, Seligman Z, Ginzburg K, &amp; Ben-Zion Z.</span><br>
+              <span class="pub-journal">Journal of Affective Disorders Reports</span><span class="pub-if">IF 2.8</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.jadr.2021.100252" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Pairwise Affinity Models of fMRI Connectivity Predict PTSD Symptom Trajectories</h4>
+            <div class="pub-meta">
+              <span>Sheynin S, Wolf L, Ben-Zion Z, et al.</span><br>
+              <span class="pub-journal">NeuroImage</span><span class="pub-if">IF 6.1</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.neuroimage.2021.118242" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-year fade-in">2020</div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Multi-Domain Potential Biomarkers for PTSD Severity in Recent Trauma Survivors</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z*, Zeevi Y*, Keynan JN, et al.</span><br>
+              <span class="pub-journal">Translational Psychiatry</span><span class="pub-if">IF 6.3</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1038/s41398-020-00898-z" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Neuroanatomical Risk Factors for PTSD in Recent Trauma Survivors</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z, Artzi M, Niry D, et al.</span><br>
+              <span class="pub-journal">Biological Psychiatry: CNNI</span><span class="pub-if">IF 6.1</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.bpsc.2019.11.003" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-year fade-in">2019</div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Neurobehavioral Moderators of PTSD Trajectories: Study Protocol of a Prospective MRI Study</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z*, Fine NB*, Keynan JN, et al.</span><br>
+              <span class="pub-journal">European Journal of Psychotraumatology</span><span class="pub-if">IF 4.9</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1080/20008198.2019.1683941" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>The Anger-Infused Ultimatum Game: A Reliable and Valid Paradigm to Induce and Assess Anger</h4>
+            <div class="pub-meta">
+              <span>Gilam G, Abend R, Shani H, Ben-Zion Z, &amp; Hendler T.</span><br>
+              <span class="pub-journal">Emotion</span><span class="pub-if">IF 4.5</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1037/emo0000435" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-year fade-in">2018</div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Cognitive Flexibility Predicts PTSD Symptoms: Observational and Interventional Studies</h4>
+            <div class="pub-meta">
+              <span>Ben-Zion Z*, Fine NB*, Keynan JN, et al.</span><br>
+              <span class="pub-journal">Frontiers in Psychiatry</span><span class="pub-if">IF 3.9</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.3389/fpsyt.2018.00477" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Attenuating Anger and Aggression with Neuromodulation of the vmPFC</h4>
+            <div class="pub-meta">
+              <span>Gilam G, Abend R, ..., Ben-Zion Z, &amp; Hendler T.</span><br>
+              <span class="pub-journal">Cortex</span><span class="pub-if">IF 3.7</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.cortex.2018.09.010" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        <div class="pub-card fade-in">
+          <div>
+            <h4>Free Viewing of Sad and Happy Faces in Depression: A Potential Target for Attention Bias Modification</h4>
+            <div class="pub-meta">
+              <span>Lazarov A*, Ben-Zion Z*, Shamai D*, Pine DS, &amp; Bar-Haim Y.</span><br>
+              <span class="pub-journal">Journal of Affective Disorders</span><span class="pub-if">IF 5.4</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.1016/j.jad.2018.05.047" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
+        </div><!-- end morePubs -->
       </div>
+
+      <button class="show-more-btn" id="showMorePubs" onclick="document.getElementById('morePubs').classList.toggle('pub-hidden'); this.textContent = this.textContent === 'Show All Publications' ? 'Show Less' : 'Show All Publications'">Show All Publications</button>
     </div>
   </section>
 
