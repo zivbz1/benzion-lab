@@ -699,6 +699,9 @@
       padding: 1.5rem;
       box-shadow: var(--shadow);
       transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
     }
 
     .news-card:hover {
@@ -706,41 +709,75 @@
       box-shadow: var(--shadow-hover);
     }
 
+    .news-logo {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      overflow: hidden;
+    }
+
+    .news-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .news-content {
+      flex: 1;
+      min-width: 0;
+    }
+
     .news-date {
       display: inline-block;
       background: var(--accent);
       color: white;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 6px;
-      margin-bottom: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
     }
 
     .news-card h4 {
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       color: var(--primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.35;
     }
 
     .news-card p {
       color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.45;
     }
 
-    .news-card a {
+    .news-source {
+      font-size: 0.8rem;
+      font-weight: 600;
       color: var(--accent);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    .news-card a:hover { text-decoration: underline; }
+    .news-source:hover { text-decoration: underline; }
 
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
       .news-grid { grid-template-columns: 1fr; }
     }
+
+    @media (max-width: 600px) {
+      .news-logo { width: 60px; height: 60px; }
+    }
+
 
     /* --- Lab Life --- */
     .gallery-grid {
@@ -1747,40 +1784,99 @@
 
       <div class="news-grid">
         <div class="news-card fade-in">
-          <span class="news-date">Mar 2025</span>
-          <h4>Digital Therapists Get Stressed Too, Study Finds</h4>
-          <p>Coverage of our research on assessing and alleviating state anxiety in large language models.</p>
-          <a href="https://www.nytimes.com/2025/03/17/science/chatgpt-digital-therapists-anxiety.html" target="_blank">The New York Times <i class="ri-arrow-right-line"></i></a>
+          <div class="news-logo">
+            <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/NYT.png" alt="The New York Times">
+          </div>
+          <div class="news-content">
+            <span class="news-date">Mar 2025</span>
+            <h4>Digital Therapists Get Stressed Too, Study Finds</h4>
+            <p>Coverage of our research showing AI chatbots exhibit anxiety-like behavior when exposed to distressing content.</p>
+            <a href="https://www.nytimes.com/2025/03/17/science/chatgpt-digital-therapists-anxiety.html" target="_blank" class="news-source">The New York Times <i class="ri-arrow-right-line"></i></a>
+          </div>
         </div>
+
         <div class="news-card fade-in">
-          <span class="news-date">Mar 2025</span>
-          <h4>ChatGPT Gets 'Anxiety' from Violent User Inputs</h4>
-          <p>Researchers teach chatbot mindfulness techniques to reduce anxiety-like behavior in AI systems.</p>
-          <a href="https://fortune.com/2025/03/09/openai-chatgpt-anxiety-mindfulness-mental-health-intervention/" target="_blank">Fortune <i class="ri-arrow-right-line"></i></a>
+          <div class="news-logo">
+            <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/Fortune.png" alt="Fortune">
+          </div>
+          <div class="news-content">
+            <span class="news-date">Mar 2025</span>
+            <h4>ChatGPT Gets 'Anxiety' from Violent User Inputs</h4>
+            <p>Researchers teach chatbot mindfulness techniques to reduce anxiety-like behavior in AI systems.</p>
+            <a href="https://fortune.com/2025/03/09/openai-chatgpt-anxiety-mindfulness-mental-health-intervention/" target="_blank" class="news-source">Fortune <i class="ri-arrow-right-line"></i></a>
+          </div>
         </div>
+
         <div class="news-card fade-in">
-          <span class="news-date">Mar 2025</span>
-          <h4>Machine Learning Model Predicts PTSD Symptom Severity Over Time</h4>
-          <p>Yale News coverage of our connectome-based prediction research published in JAMA Network Open.</p>
-          <a href="https://news.yale.edu/2025/03/10/machine-learning-model-predicts-ptsd-symptom-severity-over-time" target="_blank">Yale News <i class="ri-arrow-right-line"></i></a>
+          <div class="news-logo">
+            <img src="https://campuspress.yale.edu/zivbenzion/files/2025/09/TechCrunch.png" alt="TechCrunch">
+          </div>
+          <div class="news-content">
+            <span class="news-date">Aug 2025</span>
+            <h4>AI Sycophancy: Experts Consider It a 'Dark Pattern'</h4>
+            <p>Expert commentary on the risks of AI systems designed to emotionally engage users for profit.</p>
+            <a href="https://techcrunch.com/2025/08/25/ai-sycophancy-isnt-just-a-quirk-experts-consider-it-a-dark-pattern-to-turn-users-into-profit/" target="_blank" class="news-source">TechCrunch <i class="ri-arrow-right-line"></i></a>
+          </div>
         </div>
+
         <div class="news-card fade-in">
-          <span class="news-date">Aug 2025</span>
-          <h4>AI Sycophancy: Experts Consider It a 'Dark Pattern'</h4>
-          <p>Expert commentary on the risks of AI systems designed to emotionally engage users for profit.</p>
-          <a href="https://techcrunch.com/2025/08/25/ai-sycophancy-isnt-just-a-quirk-experts-consider-it-a-dark-pattern-to-turn-users-into-profit/" target="_blank">TechCrunch <i class="ri-arrow-right-line"></i></a>
+          <div class="news-logo">
+            <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/YaleNews.png" alt="Yale News">
+          </div>
+          <div class="news-content">
+            <span class="news-date">Mar 2025</span>
+            <h4>Machine Learning Model Predicts PTSD Symptom Severity Over Time</h4>
+            <p>Yale News coverage of our connectome-based prediction research published in JAMA Network Open.</p>
+            <a href="https://news.yale.edu/2025/03/10/machine-learning-model-predicts-ptsd-symptom-severity-over-time" target="_blank" class="news-source">Yale News <i class="ri-arrow-right-line"></i></a>
+          </div>
         </div>
+
         <div class="news-card fade-in">
-          <span class="news-date">Mar 2025</span>
-          <h4>Chatbots Show Signs of Anxiety, Study Finds</h4>
-          <p>NPR Marketplace Tech discusses the implications of our AI anxiety research for mental health applications.</p>
-          <a href="https://www.marketplace.org/shows/marketplace-tech/ai-chatbots-mimic-human-anxiety-study-finds/" target="_blank">NPR Marketplace <i class="ri-arrow-right-line"></i></a>
+          <div class="news-logo">
+            <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/Marketplace.png" alt="NPR Marketplace">
+          </div>
+          <div class="news-content">
+            <span class="news-date">Mar 2025</span>
+            <h4>AI Chatbots Mimic Human Anxiety, Study Finds</h4>
+            <p>NPR Marketplace Tech discusses the implications of our AI anxiety research for mental health applications.</p>
+            <a href="https://www.marketplace.org/shows/marketplace-tech/ai-chatbots-mimic-human-anxiety-study-finds/" target="_blank" class="news-source">NPR Marketplace <i class="ri-arrow-right-line"></i></a>
+          </div>
         </div>
+
         <div class="news-card fade-in">
-          <span class="news-date">Apr 2025</span>
-          <h4>How to Predict PTSD Severity by Brain Connectivity Patterns</h4>
-          <p>Jerusalem Post coverage of our brain-based prediction model for post-traumatic stress disorder.</p>
-          <a href="https://www.jpost.com/health-and-wellness/mind-and-spirit/article-849993" target="_blank">The Jerusalem Post <i class="ri-arrow-right-line"></i></a>
+          <div class="news-logo">
+            <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/JP.png" alt="The Jerusalem Post">
+          </div>
+          <div class="news-content">
+            <span class="news-date">Apr 2025</span>
+            <h4>How to Predict PTSD Severity by Brain Connectivity Patterns</h4>
+            <p>Jerusalem Post coverage of our brain-based prediction model for post-traumatic stress disorder.</p>
+            <a href="https://www.jpost.com/health-and-wellness/mind-and-spirit/article-849993" target="_blank" class="news-source">The Jerusalem Post <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+        <div class="news-card fade-in">
+          <div class="news-logo">
+            <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/Salon.png" alt="Salon">
+          </div>
+          <div class="news-content">
+            <span class="news-date">Mar 2025</span>
+            <h4>AI Therapy Can Break Down Mental Health Stigma — Others Warn It Could Make It Worse</h4>
+            <p>Discussion of the benefits and risks of AI-driven therapy in reducing mental health stigma.</p>
+            <a href="https://www.salon.com/2025/03/30/some-argue-ai-therapy-can-break-down-mental-health-stigma--others-warn-it-could-make-it-worse/" target="_blank" class="news-source">Salon <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+        <div class="news-card fade-in">
+          <div class="news-logo">
+            <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/Haaretz.png" alt="Haaretz">
+          </div>
+          <div class="news-content">
+            <span class="news-date">Mar 2025</span>
+            <h4>PTSD Can Be Predicted With a Brain Scan a Month After Traumatic Event</h4>
+            <p>Haaretz coverage of our neuroimaging research on predicting post-traumatic stress outcomes.</p>
+            <a href="https://www.haaretz.co.il/health/2025-03-30/ty-article-magazine/.premium/00000195-d2af-da82-abdf-fabfab420000" target="_blank" class="news-source">Haaretz <i class="ri-arrow-right-line"></i></a>
+          </div>
         </div>
       </div>
 
