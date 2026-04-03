@@ -573,16 +573,19 @@
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
     }
 
     .collab-card {
       background: white;
       border-radius: var(--radius);
-      padding: 1.2rem;
+      padding: 1rem 1.2rem;
       box-shadow: var(--shadow);
       transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .collab-card:hover {
@@ -591,25 +594,20 @@
     }
 
     .collab-card h4 {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--primary);
-      margin-bottom: 2px;
     }
 
-    .collab-card .collab-role {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
-
-    .collab-card a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.82rem;
+    .collab-inst {
+      display: inline-block;
+      font-size: 0.75rem;
       font-weight: 600;
+      color: var(--accent);
+      background: rgba(46, 139, 139, 0.08);
+      padding: 2px 8px;
+      border-radius: 4px;
+      width: fit-content;
     }
-
-    .collab-card a:hover { text-decoration: underline; }
 
     @media (max-width: 900px) {
       .collab-grid { grid-template-columns: repeat(2, 1fr); }
@@ -618,18 +616,6 @@
     @media (max-width: 600px) {
       .collab-grid { grid-template-columns: 1fr; }
     }
-
-    .collab-logo {
-      height: 30px;
-      width: 100px;
-      object-fit: contain;
-      object-position: left;
-      margin-bottom: 8px;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-
-    .collab-card:hover .collab-logo { opacity: 1; }
 
     /* --- Publications --- */
     .pub-list {
@@ -1163,149 +1149,120 @@
 
       <div class="collab-grid">
         <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
           <h4>Ifat Levy</h4>
-          <div class="collab-role">Professor of Comparative Medicine &amp; Neuroscience, Yale School of Medicine</div>
+          <span class="collab-inst">Yale University</span>
         </div>
         <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
           <h4>Ilan Harpaz-Rotem</h4>
-          <div class="collab-role">Professor of Psychiatry &amp; Psychology, Yale School of Medicine</div>
+          <span class="collab-inst">Yale University</span>
         </div>
         <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
           <h4>Dustin Scheinost</h4>
-          <div class="collab-role">Professor of Radiology &amp; Biomedical Imaging, Yale School of Medicine</div>
+          <span class="collab-inst">Yale University</span>
         </div>
         <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/Atm-logo-300x162.png" alt="Texas A&M">
-          <h4>Israel Liberzon</h4>
-          <div class="collab-role">Professor of Psychiatry, Texas A&amp;M Health Science Center</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
-          <h4>Talma Hendler</h4>
-          <div class="collab-role">Professor of Neuroscience, Tel Aviv University &amp; Sagol Brain Institute</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/NYU-300x161.jpg" alt="NYU">
-          <h4>Arieh Y. Shalev</h4>
-          <div class="collab-role">Professor of Psychiatry, NYU Langone Medical Center</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/MS.png" alt="Mount Sinai">
-          <h4>Daniela Schiller</h4>
-          <div class="collab-role">Professor of Psychiatry &amp; Neuroscience, Icahn School of Medicine at Mount Sinai</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
-          <h4>Robert Pietrzak</h4>
-          <div class="collab-role">Professor of Psychiatry &amp; Public Health, Yale School of Medicine</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Columbia_University_shield.svg/180px-Columbia_University_shield.svg.png" alt="Columbia University">
-          <h4>Katharina Schultebraucks</h4>
-          <div class="collab-role">Assistant Professor &amp; Director of Computational Medicine and AI, Columbia University</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/NIMH-Logo-600x399-600x419-1-300x210.png" alt="NIMH">
-          <h4>Daniel S. Pine</h4>
-          <div class="collab-role">Chief, Section on Development and Affective Neuroscience, NIMH</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/uofhaifa-new-300x113.png" alt="University of Haifa">
-          <h4>Roee Admon</h4>
-          <div class="collab-role">Senior Lecturer, Department of Psychology, University of Haifa</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/Oxford-University-rectangle-logo-300x92.png" alt="Oxford">
-          <h4>Morten Kringelbach</h4>
-          <div class="collab-role">Professor of Neuroscience, University of Oxford</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/Glasgow-300x157.jpg" alt="Glasgow">
-          <h4>Emily S. Cross</h4>
-          <div class="collab-role">Professor of Social Robotics, University of Glasgow</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/harv.png" alt="Harvard">
-          <h4>Nathaniel G. Harnett</h4>
-          <div class="collab-role">Assistant Professor of Psychiatry, Harvard Medical School</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
-          <h4>Alan Anticevic</h4>
-          <div class="collab-role">Professor of Psychiatry &amp; Psychology, Yale School of Medicine</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/BGU.png" alt="BGU">
-          <h4>Or Duek</h4>
-          <div class="collab-role">Assistant Professor, Ben-Gurion University of the Negev</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
-          <h4>Yair Bar-Haim</h4>
-          <div class="collab-role">Professor of Psychology &amp; Neuroscience, Tel Aviv University</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
-          <h4>Amit Lazarov</h4>
-          <div class="collab-role">Senior Lecturer, School of Psychological Sciences, Tel Aviv University</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Hebrew_University_Logo.svg/180px-Hebrew_University_Logo.svg.png" alt="Hebrew University">
-          <h4>Gadi Gilam</h4>
-          <div class="collab-role">Assistant Professor, Hebrew University of Jerusalem</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Utrecht_University_logo.svg/180px-Utrecht_University_logo.svg.png" alt="Utrecht University">
-          <h4>Alexander Leemans</h4>
-          <div class="collab-role">Professor of Neuroscience, University Medical Center Utrecht</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/reicman.png" alt="Reichman University">
-          <h4>Rany Abend</h4>
-          <div class="collab-role">Senior Lecturer, School of Psychology, Reichman University</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/emor.png" alt="Emory University">
-          <h4>Jennifer Stevens</h4>
-          <div class="collab-role">Assistant Professor, Department of Psychiatry, Emory University</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
-          <h4>Lior Wolf</h4>
-          <div class="collab-role">School of Computer Science, Tel Aviv University &amp; Meta AI Research</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
-          <h4>Yoav Benjamini</h4>
-          <div class="collab-role">Professor of Applied Statistics, Tel Aviv University</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/Ichilov.png" alt="Ichilov">
-          <h4>Dafna Ben-Bashat</h4>
-          <div class="collab-role">Deputy Director, Sagol Brain Institute, Tel Aviv Sourasky Medical Center</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/180px-Yale_University_logo.svg.png" alt="Yale University">
           <h4>Jutta Joormann</h4>
-          <div class="collab-role">Professor of Psychology, Yale University</div>
+          <span class="collab-inst">Yale University</span>
         </div>
         <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/University_of_Zurich_seal.svg/180px-University_of_Zurich_seal.svg.png" alt="University of Zurich">
+          <h4>Robert Pietrzak</h4>
+          <span class="collab-inst">Yale University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Alan Anticevic</h4>
+          <span class="collab-inst">Yale University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Daniela Schiller</h4>
+          <span class="collab-inst">Icahn School of Medicine at Mount Sinai</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Katharina Schultebraucks</h4>
+          <span class="collab-inst">Columbia University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Daniel S. Pine</h4>
+          <span class="collab-inst">NIMH</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Nathaniel G. Harnett</h4>
+          <span class="collab-inst">Harvard Medical School</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Israel Liberzon</h4>
+          <span class="collab-inst">Texas A&amp;M University</span>
+        </div>
+        <div class="collab-card fade-in">
           <h4>Tobias R. Spiller</h4>
-          <div class="collab-role">Researcher, University of Zurich</div>
+          <span class="collab-inst">University of Zurich</span>
         </div>
         <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/uofhaifa-new-300x113.png" alt="University of Haifa">
-          <h4>Roy Salomon</h4>
-          <div class="collab-role">Senior Lecturer, University of Haifa</div>
-        </div>
-        <div class="collab-card fade-in">
-          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Logo_Helmholtz_Munich.svg/180px-Logo_Helmholtz_Munich.svg.png" alt="Helmholtz Munich">
           <h4>Eric Schulz</h4>
-          <div class="collab-role">Research Group Leader, Helmholtz Munich</div>
+          <span class="collab-inst">Helmholtz Munich</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Morten Kringelbach</h4>
+          <span class="collab-inst">University of Oxford</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Emily S. Cross</h4>
+          <span class="collab-inst">University of Glasgow</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Alexander Leemans</h4>
+          <span class="collab-inst">University Medical Center Utrecht</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Jennifer Stevens</h4>
+          <span class="collab-inst">Emory University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Talma Hendler</h4>
+          <span class="collab-inst">Tel Aviv University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Arieh Y. Shalev</h4>
+          <span class="collab-inst">NYU Langone</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Roee Admon</h4>
+          <span class="collab-inst">University of Haifa</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Roy Salomon</h4>
+          <span class="collab-inst">University of Haifa</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Or Duek</h4>
+          <span class="collab-inst">Ben-Gurion University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Gadi Gilam</h4>
+          <span class="collab-inst">Hebrew University of Jerusalem</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Rany Abend</h4>
+          <span class="collab-inst">Reichman University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Yair Bar-Haim</h4>
+          <span class="collab-inst">Tel Aviv University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Amit Lazarov</h4>
+          <span class="collab-inst">Tel Aviv University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Lior Wolf</h4>
+          <span class="collab-inst">Tel Aviv University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Yoav Benjamini</h4>
+          <span class="collab-inst">Tel Aviv University</span>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Dafna Ben-Bashat</h4>
+          <span class="collab-inst">Tel Aviv Sourasky Medical Center</span>
         </div>
       </div>
     </div>
