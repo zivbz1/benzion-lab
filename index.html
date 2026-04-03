@@ -228,8 +228,8 @@
     }
 
     .hero-logo {
-      width: 90px;
-      height: 90px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       border: 3px solid rgba(255, 255, 255, 0.3);
       background: rgba(255, 255, 255, 0.1);
@@ -545,6 +545,57 @@
 
     @media (max-width: 900px) {
       .research-areas { grid-template-columns: 1fr; max-width: 500px; }
+    }
+
+    /* --- Collaborations --- */
+    .collab-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .collab-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .collab-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .collab-card h4 {
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .collab-card .collab-role {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .collab-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .collab-card a:hover { text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      .collab-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .collab-grid { grid-template-columns: 1fr; }
     }
 
     /* --- Publications --- */
@@ -895,11 +946,12 @@
     <div class="container">
       <a href="#hero" class="nav-brand">
         <img src="Lab Logo.png" alt="Lab Logo" class="nav-logo">
-        BZ Lab
+        Ben-Zion Resilience &amp; Recovery Lab
       </a>
       <ul class="nav-links">
         <li><a href="#team">Our Team</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#collaborations">Collaborations</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#news">News</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -914,6 +966,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#team">Our Team</a>
     <a href="#research">Research</a>
+    <a href="#collaborations">Collaborations</a>
     <a href="#publications">Publications</a>
     <a href="#news">News</a>
         <a href="#contact">Contact</a>
@@ -986,16 +1039,10 @@
         </div>
       </div>
 
-      <!-- Team Photo -->
-      <div class="team-photo-banner fade-in">
-        <img src="First Lab Meeting 17.11.25.jpg" alt="First Lab Meeting, November 2025 - Ben-Zion Resilience &amp; Recovery Lab">
-        <p class="photo-caption">First Lab Meeting, November 2025</p>
-      </div>
-
       <div class="team-grid">
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>Rintia Maaravi-Hishag</h4>
+          <h4>Rinatia Maaravi Hesseg</h4>
           <div class="role">Lab Manager</div>
         </div>
         <div class="team-card fade-in">
@@ -1005,22 +1052,22 @@
         </div>
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>Dalia Mo'alem</h4>
+          <h4>Dalia Moallem</h4>
           <div class="role">PhD Student</div>
         </div>
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>Adrian Mandelson</h4>
+          <h4>Adrian Mendelson</h4>
           <div class="role">MSc Student</div>
         </div>
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>Bar Alon</h4>
+          <h4>Barr Alon</h4>
           <div class="role">MSc Student</div>
         </div>
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>Shir Donsky</h4>
+          <h4>Shir Dunsky</h4>
           <div class="role">MSc Student</div>
         </div>
       </div>
@@ -1060,8 +1107,121 @@
     </div>
   </section>
 
+  <!-- Collaborations -->
+  <section class="section" id="collaborations">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Collaborations</h2>
+        <p>Our global network of research partners</p>
+      </div>
+
+      <div class="collab-grid">
+        <div class="collab-card fade-in">
+          <h4>Ifat Levy</h4>
+          <div class="collab-role">Professor of Comparative Medicine &amp; Neuroscience, Yale School of Medicine</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Ilan Harpaz-Rotem</h4>
+          <div class="collab-role">Professor of Psychiatry &amp; Psychology, Yale School of Medicine</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Dustin Scheinost</h4>
+          <div class="collab-role">Professor of Radiology &amp; Biomedical Imaging, Yale School of Medicine</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Israel Liberzon</h4>
+          <div class="collab-role">Professor of Psychiatry, Texas A&amp;M Health Science Center</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Talma Hendler</h4>
+          <div class="collab-role">Professor of Neuroscience, Tel Aviv University &amp; Sagol Brain Institute</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Arieh Y. Shalev</h4>
+          <div class="collab-role">Professor of Psychiatry, NYU Langone Medical Center</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Daniela Schiller</h4>
+          <div class="collab-role">Professor of Psychiatry &amp; Neuroscience, Icahn School of Medicine at Mount Sinai</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Robert Pietrzak</h4>
+          <div class="collab-role">Professor of Psychiatry &amp; Public Health, Yale School of Medicine</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Katharina Schultebraucks</h4>
+          <div class="collab-role">Assistant Professor &amp; Director of Computational Medicine and AI, Columbia University</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Daniel S. Pine</h4>
+          <div class="collab-role">Chief, Section on Development and Affective Neuroscience, NIMH</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Roee Admon</h4>
+          <div class="collab-role">Senior Lecturer, Department of Psychology, University of Haifa</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Morten Kringelbach</h4>
+          <div class="collab-role">Professor of Neuroscience, University of Oxford</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Emily S. Cross</h4>
+          <div class="collab-role">Professor of Social Robotics, University of Glasgow</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Nathaniel G. Harnett</h4>
+          <div class="collab-role">Assistant Professor of Psychiatry, Harvard Medical School</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Alan Anticevic</h4>
+          <div class="collab-role">Professor of Psychiatry &amp; Psychology, Yale School of Medicine</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Or Duek</h4>
+          <div class="collab-role">Assistant Professor, Ben-Gurion University of the Negev</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Yair Bar-Haim</h4>
+          <div class="collab-role">Professor of Psychology &amp; Neuroscience, Tel Aviv University</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Amit Lazarov</h4>
+          <div class="collab-role">Senior Lecturer, School of Psychological Sciences, Tel Aviv University</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Gadi Gilam</h4>
+          <div class="collab-role">Assistant Professor, Hebrew University of Jerusalem</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Alexander Leemans</h4>
+          <div class="collab-role">Professor of Neuroscience, University Medical Center Utrecht</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Rany Abend</h4>
+          <div class="collab-role">Senior Lecturer, School of Psychology, Reichman University</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Jennifer Stevens</h4>
+          <div class="collab-role">Assistant Professor, Department of Psychiatry, Emory University</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Lior Wolf</h4>
+          <div class="collab-role">School of Computer Science, Tel Aviv University &amp; Meta AI Research</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Yoav Benjamini</h4>
+          <div class="collab-role">Professor of Applied Statistics, Tel Aviv University</div>
+        </div>
+        <div class="collab-card fade-in">
+          <h4>Dafna Ben-Bashat</h4>
+          <div class="collab-role">Deputy Director, Sagol Brain Institute, Tel Aviv Sourasky Medical Center</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Publications -->
-  <section class="section" id="publications">
+  <section class="section section-alt" id="publications">
     <div class="container">
       <div class="section-title fade-in">
         <h2>Publications</h2>
@@ -1588,8 +1748,9 @@
           </div>
         </div>
 
-        <div class="contact-map fade-in">
-          <i class="ri-map-2-line"></i>
+        <div class="team-photo-banner fade-in">
+          <img src="First Lab Meeting 17.11.25.jpg" alt="First Lab Meeting, November 2025 - Ben-Zion Resilience &amp; Recovery Lab">
+          <p class="photo-caption">First Lab Meeting, November 2025</p>
         </div>
       </div>
     </div>
@@ -1607,6 +1768,7 @@
         <ul class="footer-links">
           <li><a href="#team">Our Team</a></li>
           <li><a href="#research">Research</a></li>
+          <li><a href="#collaborations">Collaborations</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#news">News</a></li>
           <li><a href="#contact">Contact</a></li>
