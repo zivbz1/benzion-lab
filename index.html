@@ -163,6 +163,33 @@
       .hamburger { display: block; }
     }
 
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      border-radius: 8px;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .team-photo-banner {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .team-photo-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* --- Hero --- */
     .hero {
       min-height: 85vh;
@@ -464,7 +491,7 @@
     /* --- Research --- */
     .research-areas {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       max-width: var(--max-width);
       margin: 0 auto;
@@ -859,7 +886,7 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#hero" class="nav-brand">
-        <span class="logo-placeholder"><i class="ri-brain-line"></i></span>
+        <img src="logo.png" alt="Lab Logo" class="nav-logo">
         BZ Lab
       </a>
       <ul class="nav-links">
@@ -867,8 +894,7 @@
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#news">News</a></li>
-        <li><a href="#lablife">Lab Life</a></li>
-        <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <i class="ri-menu-line"></i>
@@ -882,15 +908,14 @@
     <a href="#research">Research</a>
     <a href="#publications">Publications</a>
     <a href="#news">News</a>
-    <a href="#lablife">Lab Life</a>
-    <a href="#contact">Contact</a>
+        <a href="#contact">Contact</a>
   </div>
 
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-content">
       <div class="fade-in">
-        <div class="hero-logo"><i class="ri-brain-line"></i></div>
+        <div class="hero-logo"><img src="logo.png" alt="Ben-Zion Lab Logo"></div>
         <h1>Ben-Zion Resilience &amp; Recovery Lab</h1>
       </div>
       <div class="fade-in">
@@ -953,35 +978,40 @@
         </div>
       </div>
 
+      <!-- Team Photo -->
+      <div class="team-photo-banner fade-in">
+        <img src="team-photo.jpg" alt="Ben-Zion Lab team members at University of Haifa">
+      </div>
+
       <div class="team-grid">
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>TBD</h4>
+          <h4>Rintia Maaravi-Hishag</h4>
           <div class="role">Lab Manager</div>
         </div>
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>TBD</h4>
+          <h4>Daniel Panitz</h4>
           <div class="role">Lab Manager</div>
         </div>
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>TBD</h4>
+          <h4>Dalia Mo'alem</h4>
           <div class="role">PhD Student</div>
         </div>
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>TBD</h4>
+          <h4>Adrian Mandelson</h4>
           <div class="role">MSc Student</div>
         </div>
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>TBD</h4>
+          <h4>Bar Alon</h4>
           <div class="role">MSc Student</div>
         </div>
         <div class="team-card fade-in">
           <div class="team-photo"><i class="ri-user-line"></i></div>
-          <h4>TBD</h4>
+          <h4>Shir Donsky</h4>
           <div class="role">MSc Student</div>
         </div>
       </div>
@@ -998,19 +1028,24 @@
 
       <div class="research-areas">
         <div class="research-card fade-in">
-          <div class="research-icon"><i class="ri-brain-line"></i></div>
-          <h3>Neuroimaging of Trauma</h3>
-          <p>Investigating brain structure and function alterations following traumatic stress exposure using advanced MRI techniques.</p>
-        </div>
-        <div class="research-card fade-in">
-          <div class="research-icon"><i class="ri-code-s-slash-line"></i></div>
-          <h3>Computational Psychiatry</h3>
-          <p>Applying computational models and machine learning approaches to understand and predict mental health trajectories.</p>
-        </div>
-        <div class="research-card fade-in">
           <div class="research-icon"><i class="ri-shield-check-line"></i></div>
-          <h3>Resilience Mechanisms</h3>
-          <p>Identifying neurobehavioral factors that promote resilience and recovery following adversity and trauma.</p>
+          <h3>STRONG: Stress &amp; Trauma Resilience</h3>
+          <p>A national-scale ISF-funded research program (2025-2030) investigating resilience and recovery across population, behavioral-physiological, and neuroimaging levels. Examining what distinguishes individuals with high resilience to high-impact events.</p>
+        </div>
+        <div class="research-card fade-in">
+          <div class="research-icon"><i class="ri-robot-line"></i></div>
+          <h3>AI Chatbots for Mental Health</h3>
+          <p>Developing safe and innovative tools for emotional discourse between humans and AI systems (e.g., ChatGPT). Studying psychological impacts, emotional attachment risks, and AI behavior in therapeutic contexts.</p>
+        </div>
+        <div class="research-card fade-in">
+          <div class="research-icon"><i class="ri-focus-2-line"></i></div>
+          <h3>PTSD Subtyping</h3>
+          <p>Identifying distinct emotional pathways in PTSD: fear-based vs. emotional pain-based (guilt, shame, anhedonia) trajectories. Contributing to personalized, mechanism-targeted treatments.</p>
+        </div>
+        <div class="research-card fade-in">
+          <div class="research-icon"><i class="ri-brain-line"></i></div>
+          <h3>Neural Computations of Stress &amp; Anxiety</h3>
+          <p>In collaboration with Prof. Ifat Levy (Yale), investigating how the brain computes value, uncertainty, and reward/punishment anticipation under stress, using advanced fMRI paradigms.</p>
         </div>
       </div>
     </div>
@@ -1498,24 +1533,6 @@
     </div>
   </section>
 
-  <!-- Lab Life -->
-  <section class="section" id="lablife">
-    <div class="container">
-      <div class="section-title fade-in">
-        <h2>Lab Life</h2>
-        <p>Moments from our lab community</p>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-item fade-in"><i class="ri-image-line"></i></div>
-        <div class="gallery-item fade-in"><i class="ri-image-line"></i></div>
-        <div class="gallery-item fade-in"><i class="ri-image-line"></i></div>
-        <div class="gallery-item fade-in"><i class="ri-image-line"></i></div>
-        <div class="gallery-item fade-in"><i class="ri-image-line"></i></div>
-        <div class="gallery-item fade-in"><i class="ri-image-line"></i></div>
-      </div>
-    </div>
-  </section>
 
   <!-- Contact -->
   <section class="section section-alt" id="contact">
