@@ -409,6 +409,13 @@
       justify-content: center;
       color: white;
       font-size: 3rem;
+      overflow: hidden;
+    }
+
+    .pi-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .pi-info h3 {
@@ -547,6 +554,20 @@
       .research-areas { grid-template-columns: 1fr; max-width: 500px; }
     }
 
+    .research-profile {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .research-profile img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* --- Collaborations --- */
     .collab-grid {
       max-width: var(--max-width);
@@ -597,6 +618,18 @@
     @media (max-width: 600px) {
       .collab-grid { grid-template-columns: 1fr; }
     }
+
+    .collab-logo {
+      height: 35px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      margin-bottom: 8px;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .collab-card:hover .collab-logo { opacity: 1; }
 
     /* --- Publications --- */
     .pub-list {
@@ -654,6 +687,14 @@
     }
 
     .pub-link:hover { background: var(--accent); color: white; }
+
+    .pub-journal-img {
+      width: 60px;
+      height: 80px;
+      flex-shrink: 0;
+      object-fit: contain;
+      border-radius: 4px;
+    }
 
     /* --- News --- */
     .news-grid {
@@ -1023,13 +1064,14 @@
       </div>
 
       <div class="pi-card fade-in">
-        <div class="pi-photo"><i class="ri-user-line"></i></div>
+        <div class="pi-photo"><img src="Ziv Ben-Zion Headshot.jpg" alt="Dr. Ziv Ben-Zion"></div>
         <div class="pi-info">
           <h3>Dr. Ziv Ben-Zion, PhD</h3>
           <div class="pi-role">Principal Investigator | Clinical Neuroscientist</div>
           <p>Assistant Professor (Senior Lecturer), School of Public Health, University of Haifa. Adjunct Assistant Professor, Department of Psychiatry, Yale School of Medicine. PhD in Neuroscience from Tel Aviv University. Research focuses on the neurocognitive mechanisms underlying stress vulnerability and resilience, with emphasis on developing treatments for anxiety and stress-related disorders, particularly PTSD. His work spans behavioral, cognitive, physiological, and neural responses, as well as computational psychiatry and AI applications in mental health.</p>
           <div class="pi-links">
             <a href="https://campuspress.yale.edu/zivbenzion/" target="_blank" title="Personal Website"><i class="ri-global-line"></i></a>
+            <a href="https://hw.haifa.ac.il/staff/%D7%91%D7%9F-%D7%A6%D7%99%D7%95%D7%9F-%D7%96%D7%99%D7%95/" target="_blank" title="University of Haifa"><i class="ri-building-2-line"></i></a>
             <a href="https://scholar.google.co.il/citations?user=BGvZ8GQAAAAJ" target="_blank" title="Google Scholar"><i class="ri-graduation-cap-line"></i></a>
             <a href="https://orcid.org/0000-0003-3629-5851" target="_blank" title="ORCID"><i class="ri-id-card-line"></i></a>
             <a href="https://researchgate.net/profile/Ziv_Ben-Zion" target="_blank" title="ResearchGate"><i class="ri-file-text-line"></i></a>
@@ -1082,6 +1124,10 @@
         <p>Multi-disciplinary research combining neuroscience, psychology, public health, and artificial intelligence</p>
       </div>
 
+      <div class="research-profile fade-in">
+        <img src="Ziv Research Profile.png" alt="Dr. Ziv Ben-Zion's Research Profile - Clinical Neuroscience of Stress &amp; Resilience">
+      </div>
+
       <div class="research-areas">
         <div class="research-card fade-in">
           <div class="research-icon"><i class="ri-shield-check-line"></i></div>
@@ -1117,102 +1163,127 @@
 
       <div class="collab-grid">
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
           <h4>Ifat Levy</h4>
           <div class="collab-role">Professor of Comparative Medicine &amp; Neuroscience, Yale School of Medicine</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
           <h4>Ilan Harpaz-Rotem</h4>
           <div class="collab-role">Professor of Psychiatry &amp; Psychology, Yale School of Medicine</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
           <h4>Dustin Scheinost</h4>
           <div class="collab-role">Professor of Radiology &amp; Biomedical Imaging, Yale School of Medicine</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/Atm-logo-300x162.png" alt="Texas A&M">
           <h4>Israel Liberzon</h4>
           <div class="collab-role">Professor of Psychiatry, Texas A&amp;M Health Science Center</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
           <h4>Talma Hendler</h4>
           <div class="collab-role">Professor of Neuroscience, Tel Aviv University &amp; Sagol Brain Institute</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/NYU-300x161.jpg" alt="NYU">
           <h4>Arieh Y. Shalev</h4>
           <div class="collab-role">Professor of Psychiatry, NYU Langone Medical Center</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/MS.png" alt="Mount Sinai">
           <h4>Daniela Schiller</h4>
           <div class="collab-role">Professor of Psychiatry &amp; Neuroscience, Icahn School of Medicine at Mount Sinai</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
           <h4>Robert Pietrzak</h4>
           <div class="collab-role">Professor of Psychiatry &amp; Public Health, Yale School of Medicine</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2024/05/images.png" alt="Columbia">
           <h4>Katharina Schultebraucks</h4>
           <div class="collab-role">Assistant Professor &amp; Director of Computational Medicine and AI, Columbia University</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/NIMH-Logo-600x399-600x419-1-300x210.png" alt="NIMH">
           <h4>Daniel S. Pine</h4>
           <div class="collab-role">Chief, Section on Development and Affective Neuroscience, NIMH</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/uofhaifa-new-300x113.png" alt="University of Haifa">
           <h4>Roee Admon</h4>
           <div class="collab-role">Senior Lecturer, Department of Psychology, University of Haifa</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/Oxford-University-rectangle-logo-300x92.png" alt="Oxford">
           <h4>Morten Kringelbach</h4>
           <div class="collab-role">Professor of Neuroscience, University of Oxford</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/02/Glasgow-300x157.jpg" alt="Glasgow">
           <h4>Emily S. Cross</h4>
           <div class="collab-role">Professor of Social Robotics, University of Glasgow</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/harv.png" alt="Harvard">
           <h4>Nathaniel G. Harnett</h4>
           <div class="collab-role">Assistant Professor of Psychiatry, Harvard Medical School</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale">
           <h4>Alan Anticevic</h4>
           <div class="collab-role">Professor of Psychiatry &amp; Psychology, Yale School of Medicine</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/BGU.png" alt="BGU">
           <h4>Or Duek</h4>
           <div class="collab-role">Assistant Professor, Ben-Gurion University of the Negev</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
           <h4>Yair Bar-Haim</h4>
           <div class="collab-role">Professor of Psychology &amp; Neuroscience, Tel Aviv University</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
           <h4>Amit Lazarov</h4>
           <div class="collab-role">Senior Lecturer, School of Psychological Sciences, Tel Aviv University</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Hebrew_University_new_Logo.png/200px-Hebrew_University_new_Logo.png" alt="Hebrew University">
           <h4>Gadi Gilam</h4>
           <div class="collab-role">Assistant Professor, Hebrew University of Jerusalem</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Utrecht_University_logo.svg/200px-Utrecht_University_logo.svg.png" alt="Utrecht University">
           <h4>Alexander Leemans</h4>
           <div class="collab-role">Professor of Neuroscience, University Medical Center Utrecht</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/reicman.png" alt="Reichman University">
           <h4>Rany Abend</h4>
           <div class="collab-role">Senior Lecturer, School of Psychology, Reichman University</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2023/01/emor.png" alt="Emory University">
           <h4>Jennifer Stevens</h4>
           <div class="collab-role">Assistant Professor, Department of Psychiatry, Emory University</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
           <h4>Lior Wolf</h4>
           <div class="collab-role">School of Computer Science, Tel Aviv University &amp; Meta AI Research</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/TAU-300x128.png" alt="Tel Aviv University">
           <h4>Yoav Benjamini</h4>
           <div class="collab-role">Professor of Applied Statistics, Tel Aviv University</div>
         </div>
         <div class="collab-card fade-in">
+          <img class="collab-logo" src="https://campuspress.yale.edu/zivbenzion/files/2022/01/Ichilov.png" alt="Ichilov">
           <h4>Dafna Ben-Bashat</h4>
           <div class="collab-role">Deputy Director, Sagol Brain Institute, Tel Aviv Sourasky Medical Center</div>
         </div>
@@ -1232,6 +1303,7 @@
         <div class="pub-year fade-in">2025</div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/11/cover.tif_.jpg" alt="Journal">
           <div>
             <h4>Dissecting Fear and Emotional Pain in PTSD: From Symptom Networks to Neural Signatures</h4>
             <div class="pub-meta">
@@ -1243,6 +1315,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Psychedelics and Collective Trauma: Multisystemic Resilience and Recovery Pathways Among Nova Festival Survivors</h4>
             <div class="pub-meta">
@@ -1254,6 +1327,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/07/Capture.png" alt="Journal">
           <div>
             <h4>Why We Need Mandatory Safeguards for Emotionally Responsive AI</h4>
             <div class="pub-meta">
@@ -1265,6 +1339,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/07/psychological_medicine.jpg" alt="Journal">
           <div>
             <h4>Brain Network Dynamics Following Induced Acute Stress: A Neural Marker of Psychological Vulnerability</h4>
             <div class="pub-meta">
@@ -1276,6 +1351,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://pbs.twimg.com/profile_images/1875721159867609089/KTHJ-x7M_400x400.jpg" alt="Journal">
           <div>
             <h4>Assessing and Alleviating State Anxiety in Large Language Models</h4>
             <div class="pub-meta">
@@ -1287,6 +1363,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://dladata.com/img/products/2/jamano.png" alt="Journal">
           <div>
             <h4>Connectome-Based Prediction of PTSD Development in Recent Trauma Survivors</h4>
             <div class="pub-meta">
@@ -1298,6 +1375,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/06/AR-Psychology.jpg" alt="Journal">
           <div>
             <h4>Representation of Anticipated Rewards and Punishments in the Human Brain</h4>
             <div class="pub-meta">
@@ -1311,6 +1389,7 @@
         <div class="pub-year fade-in">2024</div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="Journal">
           <div>
             <h4>Neuroimaging of PTSD in Adults and Youth: Progress Over the Last Decade</h4>
             <div class="pub-meta">
@@ -1322,6 +1401,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
           <div>
             <h4>Structural Neuroimaging of Hippocampus and Amygdala Subregions in PTSD: A Scoping Review</h4>
             <div class="pub-meta">
@@ -1333,6 +1413,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://dladata.com/img/products/2/jamano.png" alt="Journal">
           <div>
             <h4>Transitions Between Emotional States in Trauma-Exposed Individuals With and Without PTSD</h4>
             <div class="pub-meta">
@@ -1347,6 +1428,7 @@
         <div class="pub-hidden" id="morePubs">
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
           <div>
             <h4>Greater Early Post-Trauma Activation in Right Inferior Frontal Gyrus Predicts Recovery from PTSD</h4>
             <div class="pub-meta">
@@ -1358,6 +1440,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/08/Psy-Research-Neuro.jpeg" alt="Journal">
           <div>
             <h4>Post-Treatment Alterations in White Matter Integrity in PTSD</h4>
             <div class="pub-meta">
@@ -1369,6 +1452,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="Journal">
           <div>
             <h4>Unraveling PTSD: Symptom Cluster Change During and 1 Year After Veterans' Residential Treatment</h4>
             <div class="pub-meta">
@@ -1380,6 +1464,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/10/Psychopharmacology.jpg" alt="Journal">
           <div>
             <h4>Effects of a Dissociative Drug on Fronto-Limbic Resting-State Functional Connectivity in PTSD</h4>
             <div class="pub-meta">
@@ -1391,6 +1476,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/08/Neuroinformatics.jpg" alt="Journal">
           <div>
             <h4>Interdisciplinary and Collaborative Training in Neuroscience: Insights from the Human Brain Project</h4>
             <div class="pub-meta">
@@ -1404,6 +1490,7 @@
         <div class="pub-year fade-in">2023</div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/AJP.png" alt="Journal">
           <div>
             <h4>Are We There Yet? Evaluating Neuroimaging-Based Biotypes of Psychiatric Vulnerability After Trauma</h4>
             <div class="pub-meta">
@@ -1415,6 +1502,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Neuroscientific Account of Guilt- and Shame-Driven PTSD Phenotypes</h4>
             <div class="pub-meta">
@@ -1426,6 +1514,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Limbic Self-Neuromodulation as a Novel Treatment for Emotional Dysregulation in PMDD</h4>
             <div class="pub-meta">
@@ -1437,6 +1526,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="Journal">
           <div>
             <h4>Correlates of Avoidance Coping in Trauma-Exposed U.S. Military Veterans</h4>
             <div class="pub-meta">
@@ -1448,6 +1538,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="Journal">
           <div>
             <h4>Changes in Mental Health Among U.S. Military Veterans During the COVID-19 Pandemic</h4>
             <div class="pub-meta">
@@ -1461,6 +1552,7 @@
         <div class="pub-year fade-in">2022</div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="Journal">
           <div>
             <h4>Longitudinal Volumetric Evaluation of Hippocampus and Amygdala Subregions in Recent Trauma Survivors</h4>
             <div class="pub-meta">
@@ -1472,6 +1564,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="Journal">
           <div>
             <h4>Assessment of Early Neurocognitive Functioning Increases the Accuracy of Predicting Chronic PTSD Risk</h4>
             <div class="pub-meta">
@@ -1483,6 +1576,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Mapping the Availability of Translated Versions of PTSD Screening Questionnaires</h4>
             <div class="pub-meta">
@@ -1494,6 +1588,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/NPP.jpg" alt="Journal">
           <div>
             <h4>Emotional Numbing in PTSD Is Associated with Lower Amygdala Reactivity to Pain</h4>
             <div class="pub-meta">
@@ -1505,6 +1600,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="Journal">
           <div>
             <h4>Delirium Screening with Machine Learning Based on Routinely Collected Nursing Data</h4>
             <div class="pub-meta">
@@ -1518,6 +1614,7 @@
         <div class="pub-year fade-in">2021</div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
           <div>
             <h4>Neural Responsivity to Reward vs. Punishment Shortly After Trauma Predicts Long-Term PTSD Development</h4>
             <div class="pub-meta">
@@ -1529,6 +1626,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/12/Frontiers-Psychiatry.jpg" alt="Journal">
           <div>
             <h4>Social Robots for Supporting PTSD Diagnosis and Treatment</h4>
             <div class="pub-meta">
@@ -1540,6 +1638,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="Journal">
           <div>
             <h4>COVID-19 Changes in Mood and Anxiety Mediate Resilience and Symptoms in Sexual Assault Survivors</h4>
             <div class="pub-meta">
@@ -1551,6 +1650,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Neuroimage.gif" alt="Journal">
           <div>
             <h4>Pairwise Affinity Models of fMRI Connectivity Predict PTSD Symptom Trajectories</h4>
             <div class="pub-meta">
@@ -1564,6 +1664,7 @@
         <div class="pub-year fade-in">2020</div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Translational-Psychiatry.jpg" alt="Journal">
           <div>
             <h4>Multi-Domain Potential Biomarkers for PTSD Severity in Recent Trauma Survivors</h4>
             <div class="pub-meta">
@@ -1575,6 +1676,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
           <div>
             <h4>Neuroanatomical Risk Factors for PTSD in Recent Trauma Survivors</h4>
             <div class="pub-meta">
@@ -1588,6 +1690,7 @@
         <div class="pub-year fade-in">2019</div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Neurobehavioral Moderators of PTSD Trajectories: Study Protocol of a Prospective MRI Study</h4>
             <div class="pub-meta">
@@ -1599,6 +1702,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Emotion.gif" alt="Journal">
           <div>
             <h4>The Anger-Infused Ultimatum Game: A Reliable and Valid Paradigm to Induce and Assess Anger</h4>
             <div class="pub-meta">
@@ -1612,6 +1716,7 @@
         <div class="pub-year fade-in">2018</div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/12/Frontiers-Psychiatry.jpg" alt="Journal">
           <div>
             <h4>Cognitive Flexibility Predicts PTSD Symptoms: Observational and Interventional Studies</h4>
             <div class="pub-meta">
@@ -1623,6 +1728,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Cortex.jpg" alt="Journal">
           <div>
             <h4>Attenuating Anger and Aggression with Neuromodulation of the vmPFC</h4>
             <div class="pub-meta">
@@ -1634,6 +1740,7 @@
         </div>
 
         <div class="pub-card fade-in">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="Journal">
           <div>
             <h4>Free Viewing of Sad and Happy Faces in Depression: A Potential Target for Attention Bias Modification</h4>
             <div class="pub-meta">
@@ -1725,7 +1832,7 @@
             <i class="ri-phone-line"></i>
             <div>
               <strong>Phone</strong><br>
-              +972-4-XXX-XXXX
+              04-8288658
             </div>
           </div>
           <div class="contact-item">
