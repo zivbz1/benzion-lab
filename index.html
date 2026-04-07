@@ -695,6 +695,42 @@
       display: block;
     }
 
+    /* --- Teaching --- */
+    .teaching-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .teaching-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .teaching-card i {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-top: 3px;
+    }
+
+    .teaching-card h4 {
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .teaching-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
     /* --- Collaborations --- */
     .collab-grid {
       max-width: var(--max-width);
@@ -1343,11 +1379,11 @@
   <div class="stats-banner">
     <div class="stats-grid">
       <div class="stat-item fade-in">
-        <div class="stat-number" data-target="36">0</div>
+        <div class="stat-number" data-target="37">0</div>
         <div class="stat-label">Publications</div>
       </div>
       <div class="stat-item fade-in">
-        <div class="stat-number" data-target="7">0</div>
+        <div class="stat-number" data-target="6">0</div>
         <div class="stat-label">Team Members</div>
       </div>
       <div class="stat-item fade-in">
@@ -1450,6 +1486,47 @@
           <div class="research-icon"><i class="ri-brain-line"></i></div>
           <h3>Neural Computations of Stress &amp; Anxiety</h3>
           <p>In collaboration with Prof. Ifat Levy (Yale), investigating how the brain computes value, uncertainty, and reward/punishment anticipation under stress, using advanced fMRI paradigms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching -->
+  <section class="section" id="teaching">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Teaching</h2>
+        <p>Graduate courses at the University of Haifa (2025-present)</p>
+      </div>
+
+      <div class="teaching-list">
+        <div class="teaching-card fade-in">
+          <i class="ri-robot-line"></i>
+          <div>
+            <h4>Public Health in the AI Era - Can Machines Replace Us?</h4>
+            <p>Graduate Course (Hebrew &amp; English) | MPH, MHA, MAN, PhD, International MPH Program</p>
+          </div>
+        </div>
+        <div class="teaching-card fade-in">
+          <i class="ri-brain-line"></i>
+          <div>
+            <h4>Neuroscience and Public Health: From Theory to Lab Research</h4>
+            <p>Graduate Course (Hebrew) | MPH, MHA, MAN, PhD</p>
+          </div>
+        </div>
+        <div class="teaching-card fade-in">
+          <i class="ri-heart-pulse-line"></i>
+          <div>
+            <h4>Public Health in Times of Prolonged National Trauma</h4>
+            <p>Graduate Course (Hebrew) | MPH, MHA, MAN, PhD</p>
+          </div>
+        </div>
+        <div class="teaching-card fade-in">
+          <i class="ri-bar-chart-2-line"></i>
+          <div>
+            <h4>Advanced Research Methods</h4>
+            <p>Graduate Course (Hebrew) | MPH, MHA, MAN, PhD</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1593,8 +1670,9 @@
       </div>
 
       <div class="pub-filters fade-in">
-        <button class="pub-filter-btn active" data-filter="all">All (36)</button>
+        <button class="pub-filter-btn active" data-filter="all">All (37)</button>
         <button class="pub-filter-btn" data-filter="first">First Author (18)</button>
+        <button class="pub-filter-btn" data-filter="2026">2026</button>
         <button class="pub-filter-btn" data-filter="2025">2025</button>
         <button class="pub-filter-btn" data-filter="2024">2024</button>
         <button class="pub-filter-btn" data-filter="2023">2023</button>
@@ -1605,6 +1683,20 @@
         <button class="pub-filter-btn" data-filter="2018">2018</button>
       </div>
       <div class="pub-list">
+        <div class="pub-year fade-in">2026</div>
+
+        <div class="pub-card fade-in" data-year="2026">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/12/Frontiers-Psychiatry.jpg" alt="Frontiers in Psychiatry">
+          <div>
+            <h4>Relationship Between Rumination and Symptoms of PTSD: A Cross-Sectional Network Analysis</h4>
+            <div class="pub-meta">
+              <span>Zhabenko O, Ben-Zion Z, Raffelh&uuml;schen P, et al.</span><br>
+              <span class="pub-journal">Frontiers in Psychiatry</span><span class="pub-if">IF 3.9</span>
+            </div>
+          </div>
+          <a href="https://doi.org/10.3389/fpsyt.2026.1786768" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
+        </div>
+
         <div class="pub-year fade-in">2025</div>
 
         <div class="pub-card fade-in" data-year="2025" data-first="true">
@@ -2186,42 +2278,51 @@
         <div class="awards-card fade-in">
           <h3><i class="ri-award-line"></i> Selected Awards &amp; Honors</h3>
           <div class="award-item">
-            <span class="award-name">Early Career Investigator Travel Fellowship, Society of Biological Psychiatry (SOBP)</span>
+            <span class="award-name">Alon Scholarship for Outstanding Faculty, Council for Higher Education, Israel</span>
             <span class="award-year">2025</span>
+          </div>
+          <div class="award-item">
+            <span class="award-name">Young Scientist Travel Award, American College of Neuropsychopharmacology (ACNP)</span>
+            <span class="award-year">2025</span>
+          </div>
+          <div class="award-item">
+            <span class="award-name">Early Career Investigator Travel Award, Society of Biological Psychiatry (SOBP)</span>
+            <span class="award-year">2025</span>
+          </div>
+          <div class="award-item">
+            <span class="award-name">Bloom Postdoctoral Fellowship for Outstanding Scholars, University of Haifa</span>
+            <span class="award-year">2024</span>
           </div>
           <div class="award-item">
             <span class="award-name">Blavatnik US Regional Award for Young Scientists Nominee, Yale University</span>
             <span class="award-year">2023</span>
           </div>
           <div class="award-item">
-            <span class="award-name">Career Development Leadership Program (CDLP), ADAA</span>
-            <span class="award-year">2022-23</span>
-          </div>
-          <div class="award-item">
-            <span class="award-name">Outstanding Oral Presentation, Yale Postdoctoral Association Symposium</span>
+            <span class="award-name">Career Development Leadership Award, ADAA</span>
             <span class="award-year">2022</span>
           </div>
           <div class="award-item">
-            <span class="award-name">Fulbright US-Israel Scholarship for Post-Doctoral Fellows</span>
-            <span class="award-year">2021-22</span>
-          </div>
-          <div class="award-item">
-            <span class="award-name">Human Brain Project (HBP) Travel Grant, EU Horizon 2020</span>
-            <span class="award-year">2020</span>
+            <span class="award-name">Fulbright US-Israel Postdoctoral Fellowship</span>
+            <span class="award-year">2021</span>
           </div>
         </div>
 
         <div class="funding-card fade-in">
           <h3><i class="ri-funds-line"></i> Active Funding</h3>
           <div class="funding-highlight">
-            <h4>STRONG: Stress and Trauma Resilience</h4>
-            <div class="funding-source">Israel Science Foundation (ISF) | Bereshit Grant</div>
-            <p>A national-scale research program (2025-2030) investigating resilience and recovery at population, behavioral-physiological, and neuroimaging levels. Examining what distinguishes individuals with high resilience to high-impact events.</p>
+            <h4>STRONG: Stress and Trauma Resilience (STRONG)</h4>
+            <div class="funding-source">Israel Science Foundation (ISF) | Bereshit Grant | PI | 2025-2030</div>
+            <p>National-scale research program investigating resilience and recovery at population, behavioral-physiological, and neuroimaging levels. Total: &#8362;3,500,000</p>
           </div>
           <div class="funding-highlight">
-            <h4>AI Chatbots for Mental Health</h4>
-            <div class="funding-source">Ongoing Research Program</div>
-            <p>Developing safe tools for emotional discourse between humans and AI systems, studying psychological impacts, emotional attachment risks, and AI behavior in therapeutic contexts.</p>
+            <h4>Neural Computations of Learning, Decision-Making and Memory</h4>
+            <div class="funding-source">NIMH R01 (R01MH133886) | Co-I (PI: Ifat Levy) | 2024-2029</div>
+            <p>Investigating neural computations underlying learning, decision-making, and memory processes. Total: $3,902,151</p>
+          </div>
+          <div class="funding-highlight">
+            <h4>ISF Bereshit Equipment Grant</h4>
+            <div class="funding-source">Israel Science Foundation | PI | 2025</div>
+            <p>Research infrastructure for the STRONG research program. Total: &#8362;2,000,000</p>
           </div>
         </div>
       </div>
