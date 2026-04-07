@@ -339,6 +339,121 @@
       .hero { min-height: 70vh; }
     }
 
+    /* --- About / Vision --- */
+    .about {
+      padding: 5rem 2rem;
+      background: var(--bg-light);
+    }
+
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-highlight {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .about-highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .about-highlight-item i {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .about-highlight-item span {
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .about-inner { grid-template-columns: 1fr; }
+      .about-image { max-width: 400px; margin: 0 auto; }
+    }
+
+    /* --- Back to Top --- */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(46, 139, 139, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      z-index: 900;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 24px rgba(46, 139, 139, 0.4);
+    }
+
+    /* --- Active nav link --- */
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .navbar.scrolled .nav-links a.active {
+      background: var(--bg-alt);
+      color: var(--accent);
+    }
+
     /* --- Stats Banner --- */
     .stats-banner {
       background: linear-gradient(135deg, var(--accent), #1a6b6b);
@@ -1195,6 +1310,35 @@
     </div>
   </section>
 
+  <!-- About / Vision -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-text fade-in">
+        <h2>Our Vision</h2>
+        <p>The lab studies resilience and recovery, seeking to understand why some people successfully recover from traumatic events while others develop chronic disorders such as PTSD.</p>
+        <p>We view resilience as a dynamic process — not a fixed trait — shaped by the interplay of individual factors (biological, psychological, social), environmental context (family, community, institutions), and systemic conditions (policy, culture). Our research integrates neuroscience, psychology, public health, and artificial intelligence.</p>
+        <p>Our mission is to develop evidence-based tools that can be applied in vulnerable populations, drive intervention development, and contribute to Israeli society's capacity to cope with ongoing security challenges.</p>
+        <div class="about-highlight">
+          <div class="about-highlight-item">
+            <i class="ri-brain-line"></i>
+            <span>Neuroimaging &amp; Computational Methods</span>
+          </div>
+          <div class="about-highlight-item">
+            <i class="ri-heart-pulse-line"></i>
+            <span>Trauma &amp; Resilience</span>
+          </div>
+          <div class="about-highlight-item">
+            <i class="ri-robot-line"></i>
+            <span>AI &amp; Mental Health</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image fade-in">
+        <img src="Ziv Research Profile.png" alt="Research Profile - Clinical Neuroscience of Stress &amp; Resilience">
+      </div>
+    </div>
+  </section>
+
   <!-- Statistics Banner -->
   <div class="stats-banner">
     <div class="stats-grid">
@@ -1284,10 +1428,6 @@
       <div class="section-title fade-in">
         <h2>Research</h2>
         <p>Multi-disciplinary research combining neuroscience, psychology, public health, and artificial intelligence</p>
-      </div>
-
-      <div class="research-profile fade-in">
-        <img src="Ziv Research Profile.png" alt="Dr. Ziv Ben-Zion's Research Profile - Clinical Neuroscience of Stress &amp; Resilience">
       </div>
 
       <div class="research-areas">
@@ -2197,6 +2337,11 @@
     </div>
   </footer>
 
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
   <script>
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
@@ -2334,6 +2479,34 @@
             yearEl.style.display = year === filter ? '' : 'none';
           }
         });
+      });
+    });
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 500);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Active nav highlighting on scroll
+    const sections = document.querySelectorAll('section[id], .about[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const offset = 150;
+      sections.forEach(section => {
+        const top = section.offsetTop - offset;
+        if (window.scrollY >= top) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
       });
     });
   </script>
