@@ -790,6 +790,92 @@
 
 
 
+    /* --- Awards & Funding --- */
+    .awards-funding-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .awards-card, .funding-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .awards-card h3, .funding-card h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .awards-card h3 i, .funding-card h3 i {
+      color: var(--accent);
+      font-size: 1.3rem;
+    }
+
+    .award-item {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .award-item:last-child { border-bottom: none; }
+
+    .award-name {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .award-year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .funding-highlight {
+      background: linear-gradient(135deg, rgba(46, 139, 139, 0.06), rgba(10, 38, 71, 0.04));
+      border: 1px solid rgba(46, 139, 139, 0.15);
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .funding-highlight h4 {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .funding-highlight .funding-source {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .funding-highlight p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .awards-funding-grid { grid-template-columns: 1fr; }
+    }
+
     /* --- Join the Lab --- */
     .join-card {
       max-width: 800px;
@@ -972,6 +1058,39 @@
     @media (max-width: 900px) {
       .footer-inner { grid-template-columns: 1fr; }
     }
+    /* --- Publication filters --- */
+    .pub-filters {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pub-filter-btn {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      background: white;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pub-filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .pub-filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
     /* --- Publications additions --- */
     .pub-year {
       font-size: 1.4rem;
@@ -1333,10 +1452,22 @@
         <p>Peer-reviewed publications from our lab</p>
       </div>
 
+      <div class="pub-filters fade-in">
+        <button class="pub-filter-btn active" data-filter="all">All (36)</button>
+        <button class="pub-filter-btn" data-filter="first">First Author (18)</button>
+        <button class="pub-filter-btn" data-filter="2025">2025</button>
+        <button class="pub-filter-btn" data-filter="2024">2024</button>
+        <button class="pub-filter-btn" data-filter="2023">2023</button>
+        <button class="pub-filter-btn" data-filter="2022">2022</button>
+        <button class="pub-filter-btn" data-filter="2021">2021</button>
+        <button class="pub-filter-btn" data-filter="2020">2020</button>
+        <button class="pub-filter-btn" data-filter="2019">2019</button>
+        <button class="pub-filter-btn" data-filter="2018">2018</button>
+      </div>
       <div class="pub-list">
         <div class="pub-year fade-in">2025</div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2025" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/11/cover.tif_.jpg" alt="Journal">
           <div>
             <h4>Dissecting Fear and Emotional Pain in PTSD: From Symptom Networks to Neural Signatures</h4>
@@ -1348,7 +1479,7 @@
           <a href="https://doi.org/10.1016/j.biopsych.2025.11.016" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2025">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Psychedelics and Collective Trauma: Multisystemic Resilience and Recovery Pathways Among Nova Festival Survivors</h4>
@@ -1360,7 +1491,7 @@
           <a href="https://doi.org/10.1080/20008066.2025.2582303" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2025" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/07/Capture.png" alt="Journal">
           <div>
             <h4>Why We Need Mandatory Safeguards for Emotionally Responsive AI</h4>
@@ -1372,7 +1503,7 @@
           <a href="https://doi.org/10.1038/d41586-025-02031-w" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2025">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/07/psychological_medicine.jpg" alt="Journal">
           <div>
             <h4>Brain Network Dynamics Following Induced Acute Stress: A Neural Marker of Psychological Vulnerability</h4>
@@ -1384,7 +1515,7 @@
           <a href="https://doi.org/10.1017/S0033291725100913" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2025" data-first="true">
           <img class="pub-journal-img" src="https://pbs.twimg.com/profile_images/1875721159867609089/KTHJ-x7M_400x400.jpg" alt="Journal">
           <div>
             <h4>Assessing and Alleviating State Anxiety in Large Language Models</h4>
@@ -1396,7 +1527,7 @@
           <a href="https://doi.org/10.1038/s41746-025-01512-6" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2025" data-first="true">
           <img class="pub-journal-img" src="https://dladata.com/img/products/2/jamano.png" alt="Journal">
           <div>
             <h4>Connectome-Based Prediction of PTSD Development in Recent Trauma Survivors</h4>
@@ -1408,7 +1539,7 @@
           <a href="https://doi.org/10.1001/jamanetworkopen.2025.0331" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2025" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/06/AR-Psychology.jpg" alt="Journal">
           <div>
             <h4>Representation of Anticipated Rewards and Punishments in the Human Brain</h4>
@@ -1422,7 +1553,7 @@
 
         <div class="pub-year fade-in">2024</div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2024">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="Journal">
           <div>
             <h4>Neuroimaging of PTSD in Adults and Youth: Progress Over the Last Decade</h4>
@@ -1434,7 +1565,7 @@
           <a href="https://doi.org/10.1038/s41380-024-02558-w" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2024" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
           <div>
             <h4>Structural Neuroimaging of Hippocampus and Amygdala Subregions in PTSD: A Scoping Review</h4>
@@ -1446,7 +1577,7 @@
           <a href="https://doi.org/10.1016/j.bpsgos.2023.07.001" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2024">
           <img class="pub-journal-img" src="https://dladata.com/img/products/2/jamano.png" alt="Journal">
           <div>
             <h4>Transitions Between Emotional States in Trauma-Exposed Individuals With and Without PTSD</h4>
@@ -1461,7 +1592,7 @@
         <!-- Hidden publications (shown on click) -->
         <div class="pub-hidden" id="morePubs">
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2024">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
           <div>
             <h4>Greater Early Post-Trauma Activation in Right Inferior Frontal Gyrus Predicts Recovery from PTSD</h4>
@@ -1473,7 +1604,7 @@
           <a href="https://doi.org/10.1016/j.bpsc.2023.07.002" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2024">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/08/Psy-Research-Neuro.jpeg" alt="Journal">
           <div>
             <h4>Post-Treatment Alterations in White Matter Integrity in PTSD</h4>
@@ -1485,7 +1616,7 @@
           <a href="https://doi.org/10.1016/j.pscychresns.2024.111864" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2024">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="Journal">
           <div>
             <h4>Unraveling PTSD: Symptom Cluster Change During and 1 Year After Veterans' Residential Treatment</h4>
@@ -1497,7 +1628,7 @@
           <a href="https://doi.org/10.1037/tra0001734" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2024">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/10/Psychopharmacology.jpg" alt="Journal">
           <div>
             <h4>Effects of a Dissociative Drug on Fronto-Limbic Resting-State Functional Connectivity in PTSD</h4>
@@ -1509,7 +1640,7 @@
           <a href="https://doi.org/10.1007/s00213-023-06479-4" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2024">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/08/Neuroinformatics.jpg" alt="Journal">
           <div>
             <h4>Interdisciplinary and Collaborative Training in Neuroscience: Insights from the Human Brain Project</h4>
@@ -1523,7 +1654,7 @@
 
         <div class="pub-year fade-in">2023</div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2023" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/AJP.png" alt="Journal">
           <div>
             <h4>Are We There Yet? Evaluating Neuroimaging-Based Biotypes of Psychiatric Vulnerability After Trauma</h4>
@@ -1535,7 +1666,7 @@
           <a href="https://doi.org/10.1176/appi.ajp.20220271" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2023" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Neuroscientific Account of Guilt- and Shame-Driven PTSD Phenotypes</h4>
@@ -1547,7 +1678,7 @@
           <a href="https://doi.org/10.1080/20008066.2023.2202060" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2023">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Limbic Self-Neuromodulation as a Novel Treatment for Emotional Dysregulation in PMDD</h4>
@@ -1559,7 +1690,7 @@
           <a href="https://doi.org/10.1111/pcn.13574" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2023">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="Journal">
           <div>
             <h4>Correlates of Avoidance Coping in Trauma-Exposed U.S. Military Veterans</h4>
@@ -1571,7 +1702,7 @@
           <a href="https://doi.org/10.1016/j.jad.2023.07.036" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2023">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="Journal">
           <div>
             <h4>Changes in Mental Health Among U.S. Military Veterans During the COVID-19 Pandemic</h4>
@@ -1585,7 +1716,7 @@
 
         <div class="pub-year fade-in">2022</div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2022" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="Journal">
           <div>
             <h4>Longitudinal Volumetric Evaluation of Hippocampus and Amygdala Subregions in Recent Trauma Survivors</h4>
@@ -1597,7 +1728,7 @@
           <a href="https://www.nature.com/articles/s41380-022-01842-x" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2022" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="Journal">
           <div>
             <h4>Assessment of Early Neurocognitive Functioning Increases the Accuracy of Predicting Chronic PTSD Risk</h4>
@@ -1609,7 +1740,7 @@
           <a href="https://doi.org/10.1038/s41380-022-01445-6" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2022" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Mapping the Availability of Translated Versions of PTSD Screening Questionnaires</h4>
@@ -1621,7 +1752,7 @@
           <a href="https://doi.org/10.1080/20008066.2022.2143019" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2022">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/NPP.jpg" alt="Journal">
           <div>
             <h4>Emotional Numbing in PTSD Is Associated with Lower Amygdala Reactivity to Pain</h4>
@@ -1633,7 +1764,7 @@
           <a href="https://doi.org/10.1038/s41386-022-01405-2" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2022">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="Journal">
           <div>
             <h4>Delirium Screening with Machine Learning Based on Routinely Collected Nursing Data</h4>
@@ -1647,7 +1778,7 @@
 
         <div class="pub-year fade-in">2021</div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2021" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
           <div>
             <h4>Neural Responsivity to Reward vs. Punishment Shortly After Trauma Predicts Long-Term PTSD Development</h4>
@@ -1659,7 +1790,7 @@
           <a href="https://doi.org/10.1016/j.bpsc.2021.09.001" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2021" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/12/Frontiers-Psychiatry.jpg" alt="Journal">
           <div>
             <h4>Social Robots for Supporting PTSD Diagnosis and Treatment</h4>
@@ -1671,7 +1802,7 @@
           <a href="https://doi.org/10.3389/fpsyt.2021.752874" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2021">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="Journal">
           <div>
             <h4>COVID-19 Changes in Mood and Anxiety Mediate Resilience and Symptoms in Sexual Assault Survivors</h4>
@@ -1683,7 +1814,7 @@
           <a href="https://doi.org/10.1016/j.jadr.2021.100252" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2021">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Neuroimage.gif" alt="Journal">
           <div>
             <h4>Pairwise Affinity Models of fMRI Connectivity Predict PTSD Symptom Trajectories</h4>
@@ -1697,7 +1828,7 @@
 
         <div class="pub-year fade-in">2020</div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2020" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Translational-Psychiatry.jpg" alt="Journal">
           <div>
             <h4>Multi-Domain Potential Biomarkers for PTSD Severity in Recent Trauma Survivors</h4>
@@ -1709,7 +1840,7 @@
           <a href="https://doi.org/10.1038/s41398-020-00898-z" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2020" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
           <div>
             <h4>Neuroanatomical Risk Factors for PTSD in Recent Trauma Survivors</h4>
@@ -1723,7 +1854,7 @@
 
         <div class="pub-year fade-in">2019</div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2019" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
           <div>
             <h4>Neurobehavioral Moderators of PTSD Trajectories: Study Protocol of a Prospective MRI Study</h4>
@@ -1735,7 +1866,7 @@
           <a href="https://doi.org/10.1080/20008198.2019.1683941" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2019">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Emotion.gif" alt="Journal">
           <div>
             <h4>The Anger-Infused Ultimatum Game: A Reliable and Valid Paradigm to Induce and Assess Anger</h4>
@@ -1749,7 +1880,7 @@
 
         <div class="pub-year fade-in">2018</div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2018" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/12/Frontiers-Psychiatry.jpg" alt="Journal">
           <div>
             <h4>Cognitive Flexibility Predicts PTSD Symptoms: Observational and Interventional Studies</h4>
@@ -1761,7 +1892,7 @@
           <a href="https://doi.org/10.3389/fpsyt.2018.00477" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2018">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Cortex.jpg" alt="Journal">
           <div>
             <h4>Attenuating Anger and Aggression with Neuromodulation of the vmPFC</h4>
@@ -1773,7 +1904,7 @@
           <a href="https://doi.org/10.1016/j.cortex.2018.09.010" target="_blank" class="pub-link" title="View paper"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="pub-card fade-in">
+        <div class="pub-card fade-in" data-year="2018" data-first="true">
           <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="Journal">
           <div>
             <h4>Free Viewing of Sad and Happy Faces in Depression: A Potential Target for Attention Bias Modification</h4>
@@ -1903,8 +2034,62 @@
   </section>
 
 
+  <!-- Awards & Funding -->
+  <section class="section" id="awards">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Awards &amp; Funding</h2>
+        <p>Recognition and support for our research</p>
+      </div>
+
+      <div class="awards-funding-grid">
+        <div class="awards-card fade-in">
+          <h3><i class="ri-award-line"></i> Selected Awards &amp; Honors</h3>
+          <div class="award-item">
+            <span class="award-name">Early Career Investigator Travel Fellowship, Society of Biological Psychiatry (SOBP)</span>
+            <span class="award-year">2025</span>
+          </div>
+          <div class="award-item">
+            <span class="award-name">Blavatnik US Regional Award for Young Scientists Nominee, Yale University</span>
+            <span class="award-year">2023</span>
+          </div>
+          <div class="award-item">
+            <span class="award-name">Career Development Leadership Program (CDLP), ADAA</span>
+            <span class="award-year">2022-23</span>
+          </div>
+          <div class="award-item">
+            <span class="award-name">Outstanding Oral Presentation, Yale Postdoctoral Association Symposium</span>
+            <span class="award-year">2022</span>
+          </div>
+          <div class="award-item">
+            <span class="award-name">Fulbright US-Israel Scholarship for Post-Doctoral Fellows</span>
+            <span class="award-year">2021-22</span>
+          </div>
+          <div class="award-item">
+            <span class="award-name">Human Brain Project (HBP) Travel Grant, EU Horizon 2020</span>
+            <span class="award-year">2020</span>
+          </div>
+        </div>
+
+        <div class="funding-card fade-in">
+          <h3><i class="ri-funds-line"></i> Active Funding</h3>
+          <div class="funding-highlight">
+            <h4>STRONG: Stress and Trauma Resilience</h4>
+            <div class="funding-source">Israel Science Foundation (ISF) | Bereshit Grant</div>
+            <p>A national-scale research program (2025-2030) investigating resilience and recovery at population, behavioral-physiological, and neuroimaging levels. Examining what distinguishes individuals with high resilience to high-impact events.</p>
+          </div>
+          <div class="funding-highlight">
+            <h4>AI Chatbots for Mental Health</h4>
+            <div class="funding-source">Ongoing Research Program</div>
+            <p>Developing safe tools for emotional discourse between humans and AI systems, studying psychological impacts, emotional attachment risks, and AI behavior in therapeutic contexts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Join the Lab -->
-  <section class="section" id="join">
+  <section class="section section-alt" id="join">
     <div class="container">
       <div class="section-title fade-in">
         <h2>Join the Lab</h2>
@@ -2098,6 +2283,57 @@
             behavior: 'smooth'
           });
         }
+      });
+    });
+
+    // Publication filters
+    document.querySelectorAll('.pub-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        // Show morePubs when filtering
+        const morePubs = document.getElementById('morePubs');
+        if (filter !== 'all') {
+          morePubs.classList.remove('pub-hidden');
+          document.getElementById('showMorePubs').style.display = 'none';
+        } else {
+          morePubs.classList.add('pub-hidden');
+          document.getElementById('showMorePubs').style.display = '';
+          document.getElementById('showMorePubs').textContent = 'Show All Publications';
+        }
+
+        // Filter cards
+        document.querySelectorAll('.pub-card').forEach(card => {
+          if (filter === 'all') {
+            card.style.display = '';
+          } else if (filter === 'first') {
+            card.style.display = card.dataset.first === 'true' ? '' : 'none';
+          } else {
+            card.style.display = card.dataset.year === filter ? '' : 'none';
+          }
+        });
+
+        // Show/hide year headers
+        document.querySelectorAll('.pub-year').forEach(yearEl => {
+          const year = yearEl.textContent.trim();
+          if (filter === 'all' || filter === 'first') {
+            // Check if any visible cards follow this year header
+            let next = yearEl.nextElementSibling;
+            let hasVisible = false;
+            while (next && !next.classList.contains('pub-year')) {
+              if (next.classList.contains('pub-card') && next.style.display !== 'none') {
+                hasVisible = true;
+                break;
+              }
+              next = next.nextElementSibling;
+            }
+            yearEl.style.display = hasVisible ? '' : 'none';
+          } else {
+            yearEl.style.display = year === filter ? '' : 'none';
+          }
+        });
       });
     });
   </script>
