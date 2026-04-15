@@ -335,9 +335,36 @@
     .hero .fade-in:nth-child(2) { transition-delay: 0.4s; }
     .hero .fade-in:nth-child(3) { transition-delay: 0.6s; }
 
+    @media (max-width: 900px) {
+      .container { padding: 0 1.25rem; }
+      .section { padding: 4rem 1.25rem; }
+      .about { padding: 4rem 1.25rem; }
+      .section-title h2 { font-size: 1.7rem; }
+      .pi-card { padding: 1.75rem 1.25rem; gap: 1.25rem; }
+      .pi-photo { width: 170px; height: 170px; }
+      .pi-info h3 { font-size: 1.25rem; }
+    }
+
     @media (max-width: 600px) {
       .hero h1 { font-size: 2rem; }
-      .hero { min-height: 70vh; }
+      .hero { min-height: 70vh; padding: calc(var(--nav-height) + 1.5rem) 1rem 3rem; }
+      .hero .subtitle { font-size: 1rem; }
+      .hero .tagline { font-size: 0.95rem; }
+      .hero-logo { width: 100px; height: 100px; font-size: 2rem; }
+      .hero-buttons { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+      .hero-buttons .btn { justify-content: center; }
+      .container { padding: 0 1rem; }
+      .section { padding: 3.5rem 1rem; }
+      .about { padding: 3.5rem 1rem; }
+      .section-title { margin-bottom: 2rem; }
+      .section-title h2 { font-size: 1.5rem; }
+      .section-title p { font-size: 0.95rem; }
+      .stats-banner { padding: 2rem 1rem; }
+      .inst-members { gap: 0.35rem 0.9rem; }
+      .inst-members span { font-size: 0.85rem; }
+      .inst-header h4 { font-size: 0.9rem; }
+      .collab-institution { padding: 1rem; }
+      .region-title { font-size: 1.1rem; letter-spacing: 1px; }
     }
 
     /* --- About / Vision --- */
@@ -575,14 +602,14 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .team-card {
       background: white;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 1.5rem;
+      padding: 2rem 1.5rem;
       text-align: center;
       transition: transform 0.2s, box-shadow 0.2s;
     }
@@ -593,15 +620,15 @@
     }
 
     .team-photo {
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       background: var(--bg-alt);
-      margin: 0 auto 1rem;
+      margin: 0 auto 1.25rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
+      font-size: 3rem;
       color: var(--text-muted);
       overflow: hidden;
     }
@@ -610,28 +637,31 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       display: block;
     }
 
     .team-card h4 {
-      font-size: 1.05rem;
+      font-size: 1.2rem;
       color: var(--primary);
       margin-bottom: 4px;
     }
 
     .team-card .role {
       color: var(--text-muted);
-      font-size: 0.88rem;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 900px) {
       .pi-card { flex-direction: column; text-align: center; }
       .pi-links { justify-content: center; }
-      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .team-photo { width: 170px; height: 170px; }
     }
 
     @media (max-width: 600px) {
       .team-grid { grid-template-columns: 1fr; }
+      .team-photo { width: 180px; height: 180px; }
     }
 
     /* --- Research --- */
@@ -735,53 +765,150 @@
       color: var(--text-muted);
     }
 
-    /* --- Collaborations --- */
-    .collab-grid {
+    /* --- Press Strip --- */
+    .press-strip {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--bg-alt);
+      border-bottom: 1px solid var(--bg-alt);
+    }
+
+    .press-strip-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+      text-align: center;
     }
 
-    .collab-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 1rem 1.2rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
+    .press-strip-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .press-logos {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.75rem 3rem;
     }
 
-    .collab-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
+    .press-logos a {
+      display: inline-flex;
+      align-items: center;
+      height: 40px;
+      filter: grayscale(100%);
+      opacity: 0.55;
+      transition: filter 0.3s, opacity 0.3s, transform 0.3s;
     }
 
-    .collab-card h4 {
-      font-size: 0.92rem;
-      color: var(--primary);
+    .press-logos a:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: translateY(-2px);
     }
 
-    .collab-inst {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent);
-      background: rgba(46, 139, 139, 0.08);
-      padding: 2px 8px;
-      border-radius: 4px;
-      width: fit-content;
-    }
-
-    @media (max-width: 900px) {
-      .collab-grid { grid-template-columns: repeat(2, 1fr); }
+    .press-logos img {
+      max-height: 40px;
+      max-width: 140px;
+      width: auto;
+      object-fit: contain;
     }
 
     @media (max-width: 600px) {
-      .collab-grid { grid-template-columns: 1fr; }
+      .press-strip { padding: 1.75rem 1rem; }
+      .press-logos { gap: 1.25rem 2rem; }
+      .press-logos a, .press-logos img { height: 30px; max-height: 30px; }
+    }
+
+    /* --- Collaborations --- */
+    .collab-region {
+      max-width: var(--max-width);
+      margin: 0 auto 3rem;
+    }
+
+    .collab-region:last-child { margin-bottom: 0; }
+
+    .region-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--accent);
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+
+    .collab-region-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .collab-institution {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.1rem 1.3rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-left: 3px solid var(--accent);
+    }
+
+    .collab-institution:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .collab-institution.wide { grid-column: span 2; }
+
+    .inst-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
+      border-bottom: 1px solid var(--bg-alt);
+    }
+
+    .inst-header h4 {
+      font-size: 0.95rem;
+      color: var(--primary);
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .inst-count {
+      background: rgba(46, 139, 139, 0.1);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    .inst-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.1rem;
+    }
+
+    .inst-members span {
+      color: var(--text);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 900px) {
+      .collab-region-grid { grid-template-columns: 1fr; }
+      .collab-institution.wide { grid-column: span 1; }
     }
 
     /* --- Publications --- */
@@ -1403,6 +1530,33 @@
       <div class="stat-item fade-in">
         <div class="stat-number" data-target="40">0</div>
         <div class="stat-label">Global Collaborations</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured In Press Strip -->
+  <div class="press-strip fade-in">
+    <div class="press-strip-inner">
+      <div class="press-strip-title">Featured In</div>
+      <div class="press-logos">
+        <a href="https://www.nytimes.com/2025/03/17/science/chatgpt-digital-therapists-anxiety.html" target="_blank" title="The New York Times">
+          <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/NYT.png" alt="The New York Times">
+        </a>
+        <a href="https://fortune.com/2025/03/09/openai-chatgpt-anxiety-mindfulness-mental-health-intervention/" target="_blank" title="Fortune">
+          <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/Fortune.png" alt="Fortune">
+        </a>
+        <a href="https://techcrunch.com/2025/08/25/ai-sycophancy-isnt-just-a-quirk-experts-consider-it-a-dark-pattern-to-turn-users-into-profit/" target="_blank" title="TechCrunch">
+          <img src="https://campuspress.yale.edu/zivbenzion/files/2025/09/TechCrunch.png" alt="TechCrunch">
+        </a>
+        <a href="https://www.marketplace.org/shows/marketplace-tech/ai-chatbots-mimic-human-anxiety-study-finds/" target="_blank" title="NPR Marketplace">
+          <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/Marketplace.png" alt="NPR Marketplace">
+        </a>
+        <a href="https://news.yale.edu/2025/03/10/machine-learning-model-predicts-ptsd-symptom-severity-over-time" target="_blank" title="Yale News">
+          <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/YaleNews.png" alt="Yale News">
+        </a>
+        <a href="https://www.jpost.com/health-and-wellness/mind-and-spirit/article-849993" target="_blank" title="The Jerusalem Post">
+          <img src="https://campuspress.yale.edu/zivbenzion/files/2025/04/JP.png" alt="The Jerusalem Post">
+        </a>
       </div>
     </div>
   </div>
@@ -2188,166 +2342,217 @@
         <p>Our global network of research partners</p>
       </div>
 
-      <div class="collab-grid">
-        <div class="collab-card fade-in">
-          <h4>Ifat Levy</h4>
-          <span class="collab-inst">Yale University</span>
+      <!-- United States -->
+      <div class="collab-region fade-in">
+        <h3 class="region-title">United States</h3>
+        <div class="collab-region-grid">
+          <div class="collab-institution wide">
+            <div class="inst-header">
+              <h4>Yale University</h4>
+              <span class="inst-count">6 collaborators</span>
+            </div>
+            <div class="inst-members">
+              <span>Ifat Levy</span>
+              <span>Ilan Harpaz-Rotem</span>
+              <span>Dustin Scheinost</span>
+              <span>Jutta Joormann</span>
+              <span>Robert Pietrzak</span>
+              <span>Alan Anticevic</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Harvard Medical School</h4>
+            </div>
+            <div class="inst-members">
+              <span>Nathaniel G. Harnett</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Columbia University</h4>
+            </div>
+            <div class="inst-members">
+              <span>Katharina Schultebraucks</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Icahn School of Medicine at Mount Sinai</h4>
+            </div>
+            <div class="inst-members">
+              <span>Daniela Schiller</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>NYU Langone</h4>
+            </div>
+            <div class="inst-members">
+              <span>Arieh Y. Shalev</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Emory University</h4>
+            </div>
+            <div class="inst-members">
+              <span>Jennifer Stevens</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Texas A&amp;M University</h4>
+              <span class="inst-count">2</span>
+            </div>
+            <div class="inst-members">
+              <span>Israel Liberzon</span>
+              <span>Jony Sheynin</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>NIMH</h4>
+            </div>
+            <div class="inst-members">
+              <span>Daniel S. Pine</span>
+            </div>
+          </div>
         </div>
-        <div class="collab-card fade-in">
-          <h4>Ilan Harpaz-Rotem</h4>
-          <span class="collab-inst">Yale University</span>
+      </div>
+
+      <!-- Israel -->
+      <div class="collab-region fade-in">
+        <h3 class="region-title">Israel</h3>
+        <div class="collab-region-grid">
+          <div class="collab-institution wide">
+            <div class="inst-header">
+              <h4>University of Haifa</h4>
+              <span class="inst-count">7 collaborators</span>
+            </div>
+            <div class="inst-members">
+              <span>Roee Admon</span>
+              <span>Roy Salomon</span>
+              <span>Teddy Lazebnik</span>
+              <span>Naor Demeter</span>
+              <span>Zohar Elyoseph</span>
+              <span>Sigal Zilcha-Mano</span>
+              <span>Yossi Levi-Belz</span>
+            </div>
+          </div>
+          <div class="collab-institution wide">
+            <div class="inst-header">
+              <h4>Tel Aviv University</h4>
+              <span class="inst-count">6 collaborators</span>
+            </div>
+            <div class="inst-members">
+              <span>Talma Hendler</span>
+              <span>Yair Bar-Haim</span>
+              <span>Amit Lazarov</span>
+              <span>Lior Wolf</span>
+              <span>Yoav Benjamini</span>
+              <span>Malka Gorfine</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Hebrew University of Jerusalem</h4>
+              <span class="inst-count">2</span>
+            </div>
+            <div class="inst-members">
+              <span>Gadi Gilam</span>
+              <span>Ariel Jaffe</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Ben-Gurion University</h4>
+            </div>
+            <div class="inst-members">
+              <span>Or Duek</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Reichman University</h4>
+            </div>
+            <div class="inst-members">
+              <span>Rany Abend</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Bar-Ilan University</h4>
+            </div>
+            <div class="inst-members">
+              <span>Guy Simon</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Tel Aviv Sourasky Medical Center</h4>
+            </div>
+            <div class="inst-members">
+              <span>Dafna Ben-Bashat</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Maccabi Healthcare Services</h4>
+            </div>
+            <div class="inst-members">
+              <span>Demian Halperin</span>
+            </div>
+          </div>
         </div>
-        <div class="collab-card fade-in">
-          <h4>Dustin Scheinost</h4>
-          <span class="collab-inst">Yale University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Jutta Joormann</h4>
-          <span class="collab-inst">Yale University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Robert Pietrzak</h4>
-          <span class="collab-inst">Yale University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Alan Anticevic</h4>
-          <span class="collab-inst">Yale University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Daniela Schiller</h4>
-          <span class="collab-inst">Icahn School of Medicine at Mount Sinai</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Katharina Schultebraucks</h4>
-          <span class="collab-inst">Columbia University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Daniel S. Pine</h4>
-          <span class="collab-inst">NIMH</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Nathaniel G. Harnett</h4>
-          <span class="collab-inst">Harvard Medical School</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Israel Liberzon</h4>
-          <span class="collab-inst">Texas A&amp;M University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Tobias R. Spiller</h4>
-          <span class="collab-inst">University of Zurich</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Eric Schulz</h4>
-          <span class="collab-inst">Helmholtz Munich</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Morten Kringelbach</h4>
-          <span class="collab-inst">University of Oxford</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Emily S. Cross</h4>
-          <span class="collab-inst">University of Glasgow</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Alexander Leemans</h4>
-          <span class="collab-inst">University Medical Center Utrecht</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Jennifer Stevens</h4>
-          <span class="collab-inst">Emory University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Talma Hendler</h4>
-          <span class="collab-inst">Tel Aviv University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Arieh Y. Shalev</h4>
-          <span class="collab-inst">NYU Langone</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Roee Admon</h4>
-          <span class="collab-inst">University of Haifa</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Roy Salomon</h4>
-          <span class="collab-inst">University of Haifa</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Or Duek</h4>
-          <span class="collab-inst">Ben-Gurion University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Gadi Gilam</h4>
-          <span class="collab-inst">Hebrew University of Jerusalem</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Rany Abend</h4>
-          <span class="collab-inst">Reichman University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Yair Bar-Haim</h4>
-          <span class="collab-inst">Tel Aviv University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Amit Lazarov</h4>
-          <span class="collab-inst">Tel Aviv University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Lior Wolf</h4>
-          <span class="collab-inst">Tel Aviv University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Yoav Benjamini</h4>
-          <span class="collab-inst">Tel Aviv University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Dafna Ben-Bashat</h4>
-          <span class="collab-inst">Tel Aviv Sourasky Medical Center</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Philipp Homan</h4>
-          <span class="collab-inst">University of Zurich</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Jony Sheynin</h4>
-          <span class="collab-inst">Texas A&amp;M University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Teddy Lazebnik</h4>
-          <span class="collab-inst">University of Haifa</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Naor Demeter</h4>
-          <span class="collab-inst">University of Haifa</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Zohar Elyoseph</h4>
-          <span class="collab-inst">University of Haifa</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Sigal Zilcha-Mano</h4>
-          <span class="collab-inst">University of Haifa</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Yossi Levi-Belz</h4>
-          <span class="collab-inst">University of Haifa</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Guy Simon</h4>
-          <span class="collab-inst">Bar-Ilan University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Demian Halperin</h4>
-          <span class="collab-inst">Maccabi Healthcare Services</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Malka Gorfine</h4>
-          <span class="collab-inst">Tel Aviv University</span>
-        </div>
-        <div class="collab-card fade-in">
-          <h4>Ariel Jaffe</h4>
-          <span class="collab-inst">Hebrew University of Jerusalem</span>
+      </div>
+
+      <!-- Europe -->
+      <div class="collab-region fade-in">
+        <h3 class="region-title">Europe</h3>
+        <div class="collab-region-grid">
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>University of Zurich</h4>
+              <span class="inst-count">2</span>
+            </div>
+            <div class="inst-members">
+              <span>Tobias R. Spiller</span>
+              <span>Philipp Homan</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>University of Oxford</h4>
+            </div>
+            <div class="inst-members">
+              <span>Morten Kringelbach</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>University of Glasgow</h4>
+            </div>
+            <div class="inst-members">
+              <span>Emily S. Cross</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>Helmholtz Munich</h4>
+            </div>
+            <div class="inst-members">
+              <span>Eric Schulz</span>
+            </div>
+          </div>
+          <div class="collab-institution">
+            <div class="inst-header">
+              <h4>University Medical Center Utrecht</h4>
+            </div>
+            <div class="inst-members">
+              <span>Alexander Leemans</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
