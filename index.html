@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://unpkg.com/globe.gl@2.27.0/dist/globe.gl.min.js"></script>
   <style>
     :root {
       --primary: #0a2647;
@@ -667,52 +668,94 @@
     /* --- Research --- */
     .research-areas {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
       max-width: var(--max-width);
       margin: 0 auto;
     }
 
     .research-card {
       background: white;
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 2rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.2s, border-color 0.2s;
     }
 
-    .research-card:hover {
-      transform: translateY(-4px);
+    .research-card:hover,
+    .research-card.open {
       box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    .research-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem 1.4rem;
     }
 
     .research-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--accent), #1a6b6b);
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #e8f4f4, #d0ecec);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 1.2rem;
-      font-size: 1.8rem;
-      color: white;
+      font-size: 1.2rem;
+      color: var(--accent);
+      flex-shrink: 0;
     }
 
     .research-card h3 {
-      font-size: 1.15rem;
+      font-size: 0.95rem;
       color: var(--primary);
-      margin-bottom: 0.75rem;
+      font-weight: 600;
+      line-height: 1.35;
+      flex: 1;
     }
 
-    .research-card p {
+    .research-chevron {
       color: var(--text-muted);
-      font-size: 0.93rem;
+      font-size: 1rem;
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+
+    .research-card.open .research-chevron { transform: rotate(180deg); }
+
+    .research-card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 1.4rem;
+    }
+
+    .research-card.open .research-card-body {
+      max-height: 220px;
+      padding: 0 1.4rem 1.4rem;
+    }
+
+    .research-card-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin: 0;
+    }
+
+    .research-hint {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 1.25rem;
     }
 
     @media (max-width: 900px) {
-      .research-areas { grid-template-columns: 1fr; max-width: 500px; }
+      .research-areas { grid-template-columns: 1fr; }
     }
 
     .research-profile {
@@ -825,91 +868,121 @@
     }
 
     /* --- Collaborations --- */
-    .collab-region {
-      max-width: var(--max-width);
-      margin: 0 auto 3rem;
+    /* --- Collaborations Globe --- */
+    #collaborations {
+      background: var(--primary);
+      color: white;
     }
 
-    .collab-region:last-child { margin-bottom: 0; }
+    #collaborations .section-title h2 { color: white; }
+    #collaborations .section-title p { color: rgba(255,255,255,0.6); }
 
-    .region-title {
-      font-size: 1.25rem;
-      color: var(--primary);
-      text-align: center;
-      margin-bottom: 1.75rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 2px solid var(--accent);
-      max-width: 280px;
-      margin-left: auto;
-      margin-right: auto;
+    .globe-layout {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #globeViz { flex-shrink: 0; }
+
+    .globe-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      min-width: 220px;
+    }
+
+    .globe-legend-label {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 700;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.25rem;
     }
 
-    .collab-region-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    .collab-institution {
-      background: white;
-      border-radius: var(--radius);
-      padding: 1.1rem 1.3rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border-left: 3px solid var(--accent);
-    }
-
-    .collab-institution:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .collab-institution.wide { grid-column: span 2; }
-
-    .inst-header {
+    .globe-legend-item {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      padding-bottom: 0.6rem;
-      margin-bottom: 0.7rem;
-      border-bottom: 1px solid var(--bg-alt);
     }
 
-    .inst-header h4 {
-      font-size: 0.95rem;
-      color: var(--primary);
-      font-weight: 700;
-      flex: 1;
+    .globe-legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
-    .inst-count {
-      background: rgba(46, 139, 139, 0.1);
-      color: var(--accent);
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 3px 9px;
-      border-radius: 10px;
-      white-space: nowrap;
-    }
-
-    .inst-members {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem 1.1rem;
-    }
-
-    .inst-members span {
-      color: var(--text);
+    .globe-legend-item span {
       font-size: 0.88rem;
+      color: rgba(255,255,255,0.85);
     }
 
-    @media (max-width: 900px) {
-      .collab-region-grid { grid-template-columns: 1fr; }
-      .collab-institution.wide { grid-column: span 1; }
+    .globe-legend-item strong { color: white; }
+
+    .globe-legend-note {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.78rem;
+      margin-top: 1rem;
+      line-height: 1.6;
     }
+
+    .globe-region-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .globe-region-btn {
+      padding: 0.4rem 1.1rem;
+      border-radius: 20px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      background: transparent;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .globe-region-btn:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: white;
+    }
+
+    .globe-region-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+
+    .globe-tooltip {
+      position: fixed;
+      background: white;
+      color: var(--text);
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      pointer-events: none;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      max-width: 220px;
+    }
+
+    .globe-tooltip-name {
+      display: block;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .globe-tooltip-sub { color: var(--text-muted); }
 
     /* --- Publications --- */
     .pub-list {
@@ -1571,36 +1644,67 @@
 
       <div class="research-areas">
         <div class="research-card fade-in">
-          <div class="research-icon"><i class="ri-shield-check-line"></i></div>
-          <h3>STRONG: Stress &amp; Trauma Resilience</h3>
-          <p>A national-scale ISF-funded research program (2025-2030) investigating resilience and recovery across population, behavioral-physiological, and neuroimaging levels. Examining what distinguishes individuals with high resilience to high-impact events.</p>
+          <div class="research-card-header">
+            <div class="research-icon"><i class="ri-shield-check-line"></i></div>
+            <h3>STRONG: Stress &amp; Trauma Resilience</h3>
+            <i class="ri-arrow-down-s-line research-chevron"></i>
+          </div>
+          <div class="research-card-body">
+            <p>A national-scale ISF-funded research program (2025–2030) investigating resilience and recovery across population, behavioral-physiological, and neuroimaging levels. Examining what distinguishes individuals with high resilience to high-impact events.</p>
+          </div>
         </div>
         <div class="research-card fade-in">
-          <div class="research-icon"><i class="ri-robot-line"></i></div>
-          <h3>AI Chatbots for Mental Health</h3>
-          <p>Developing safe and innovative tools for emotional discourse between humans and AI systems (e.g., ChatGPT). Studying psychological impacts, emotional attachment risks, and AI behavior in therapeutic contexts.</p>
+          <div class="research-card-header">
+            <div class="research-icon"><i class="ri-robot-line"></i></div>
+            <h3>AI Chatbots for Mental Health</h3>
+            <i class="ri-arrow-down-s-line research-chevron"></i>
+          </div>
+          <div class="research-card-body">
+            <p>Developing safe and innovative tools for emotional discourse between humans and AI systems (e.g., ChatGPT). Studying psychological impacts, emotional attachment risks, and AI behavior in therapeutic contexts.</p>
+          </div>
         </div>
         <div class="research-card fade-in">
-          <div class="research-icon"><i class="ri-focus-2-line"></i></div>
-          <h3>PTSD Subtyping</h3>
-          <p>In collaboration with Prof. Ilan Harpaz-Rotem (Yale), identifying distinct emotional pathways in PTSD: fear-based vs. emotional pain-based (guilt, shame, anhedonia) trajectories. Contributing to personalized, mechanism-targeted treatments.</p>
+          <div class="research-card-header">
+            <div class="research-icon"><i class="ri-focus-2-line"></i></div>
+            <h3>PTSD Subtyping</h3>
+            <i class="ri-arrow-down-s-line research-chevron"></i>
+          </div>
+          <div class="research-card-body">
+            <p>In collaboration with Prof. Ilan Harpaz-Rotem (Yale), identifying distinct emotional pathways in PTSD: fear-based vs. emotional pain-based (guilt, shame, anhedonia) trajectories. Contributing to personalized, mechanism-targeted treatments.</p>
+          </div>
         </div>
         <div class="research-card fade-in">
-          <div class="research-icon"><i class="ri-brain-line"></i></div>
-          <h3>Neural Computations of Stress &amp; Anxiety</h3>
-          <p>In collaboration with Prof. Ifat Levy (Yale), investigating how the brain computes value, uncertainty, and reward/punishment anticipation under stress, using advanced fMRI paradigms.</p>
+          <div class="research-card-header">
+            <div class="research-icon"><i class="ri-brain-line"></i></div>
+            <h3>Neural Computations of Stress &amp; Anxiety</h3>
+            <i class="ri-arrow-down-s-line research-chevron"></i>
+          </div>
+          <div class="research-card-body">
+            <p>In collaboration with Prof. Ifat Levy (Yale), investigating how the brain computes value, uncertainty, and reward/punishment anticipation under stress, using advanced fMRI paradigms.</p>
+          </div>
         </div>
         <div class="research-card fade-in">
-          <div class="research-icon"><i class="ri-goblet-line"></i></div>
-          <h3>Vinotherapy for PTSD</h3>
-          <p>Investigating the therapeutic potential of structured wine-based interventions for individuals with post-traumatic stress disorder.</p>
+          <div class="research-card-header">
+            <div class="research-icon"><i class="ri-goblet-line"></i></div>
+            <h3>Vinotherapy for PTSD</h3>
+            <i class="ri-arrow-down-s-line research-chevron"></i>
+          </div>
+          <div class="research-card-body">
+            <p>Investigating the therapeutic potential of structured wine-based interventions for individuals with post-traumatic stress disorder.</p>
+          </div>
         </div>
         <div class="research-card fade-in">
-          <div class="research-icon"><i class="ri-heart-2-line"></i></div>
-          <h3>Animal-Assisted Therapy for Women with PTSD</h3>
-          <p>Community-based rehabilitation using service dogs for women with post-traumatic stress disorder following sexual abuse.</p>
+          <div class="research-card-header">
+            <div class="research-icon"><i class="ri-heart-2-line"></i></div>
+            <h3>Animal-Assisted Therapy for Women with PTSD</h3>
+            <i class="ri-arrow-down-s-line research-chevron"></i>
+          </div>
+          <div class="research-card-body">
+            <p>Community-based rehabilitation using service dogs for women with post-traumatic stress disorder following sexual abuse.</p>
+          </div>
         </div>
       </div>
+      <p class="research-hint"><i class="ri-mouse-line"></i>&nbsp; Click a card to expand details</p>
     </div>
   </section>
 
@@ -2339,220 +2443,33 @@
     <div class="container">
       <div class="section-title fade-in">
         <h2>Collaborations</h2>
-        <p>Our global network of research partners</p>
+        <p>Global network of research partners — hover over a point to explore</p>
       </div>
 
-      <!-- United States -->
-      <div class="collab-region fade-in">
-        <h3 class="region-title">United States</h3>
-        <div class="collab-region-grid">
-          <div class="collab-institution wide">
-            <div class="inst-header">
-              <h4>Yale University</h4>
-              <span class="inst-count">6 collaborators</span>
-            </div>
-            <div class="inst-members">
-              <span>Ifat Levy</span>
-              <span>Ilan Harpaz-Rotem</span>
-              <span>Dustin Scheinost</span>
-              <span>Jutta Joormann</span>
-              <span>Robert Pietrzak</span>
-              <span>Alan Anticevic</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Harvard Medical School</h4>
-            </div>
-            <div class="inst-members">
-              <span>Nathaniel G. Harnett</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Columbia University</h4>
-            </div>
-            <div class="inst-members">
-              <span>Katharina Schultebraucks</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Icahn School of Medicine at Mount Sinai</h4>
-            </div>
-            <div class="inst-members">
-              <span>Daniela Schiller</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>NYU Langone</h4>
-            </div>
-            <div class="inst-members">
-              <span>Arieh Y. Shalev</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Emory University</h4>
-            </div>
-            <div class="inst-members">
-              <span>Jennifer Stevens</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Texas A&amp;M University</h4>
-              <span class="inst-count">2</span>
-            </div>
-            <div class="inst-members">
-              <span>Israel Liberzon</span>
-              <span>Jony Sheynin</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>NIMH</h4>
-            </div>
-            <div class="inst-members">
-              <span>Daniel S. Pine</span>
-            </div>
-          </div>
-        </div>
+      <div class="globe-region-row">
+        <button class="globe-region-btn active" id="globeBtnAll" onclick="globeZoomTo('all')">All Regions</button>
+        <button class="globe-region-btn" id="globeBtnUs" onclick="globeZoomTo('us')">United States</button>
+        <button class="globe-region-btn" id="globeBtnIl" onclick="globeZoomTo('il')">Israel</button>
+        <button class="globe-region-btn" id="globeBtnEu" onclick="globeZoomTo('eu')">Europe</button>
       </div>
 
-      <!-- Israel -->
-      <div class="collab-region fade-in">
-        <h3 class="region-title">Israel</h3>
-        <div class="collab-region-grid">
-          <div class="collab-institution wide">
-            <div class="inst-header">
-              <h4>University of Haifa</h4>
-              <span class="inst-count">7 collaborators</span>
-            </div>
-            <div class="inst-members">
-              <span>Roee Admon</span>
-              <span>Roy Salomon</span>
-              <span>Teddy Lazebnik</span>
-              <span>Naor Demeter</span>
-              <span>Zohar Elyoseph</span>
-              <span>Sigal Zilcha-Mano</span>
-              <span>Yossi Levi-Belz</span>
-            </div>
+      <div class="globe-layout">
+        <div id="globeViz"></div>
+        <div class="globe-legend">
+          <p class="globe-legend-label">Legend</p>
+          <div class="globe-legend-item">
+            <div class="globe-legend-dot" style="background:#f59e0b"></div>
+            <span><strong>United States</strong> — 8 institutions</span>
           </div>
-          <div class="collab-institution wide">
-            <div class="inst-header">
-              <h4>Tel Aviv University</h4>
-              <span class="inst-count">6 collaborators</span>
-            </div>
-            <div class="inst-members">
-              <span>Talma Hendler</span>
-              <span>Yair Bar-Haim</span>
-              <span>Amit Lazarov</span>
-              <span>Lior Wolf</span>
-              <span>Yoav Benjamini</span>
-              <span>Malka Gorfine</span>
-            </div>
+          <div class="globe-legend-item">
+            <div class="globe-legend-dot" style="background:#34d399"></div>
+            <span><strong>Israel</strong> — 8 institutions</span>
           </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Hebrew University of Jerusalem</h4>
-              <span class="inst-count">2</span>
-            </div>
-            <div class="inst-members">
-              <span>Gadi Gilam</span>
-              <span>Ariel Jaffe</span>
-            </div>
+          <div class="globe-legend-item">
+            <div class="globe-legend-dot" style="background:#60a5fa"></div>
+            <span><strong>Europe</strong> — 5 institutions</span>
           </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Ben-Gurion University</h4>
-            </div>
-            <div class="inst-members">
-              <span>Or Duek</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Reichman University</h4>
-            </div>
-            <div class="inst-members">
-              <span>Rany Abend</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Bar-Ilan University</h4>
-            </div>
-            <div class="inst-members">
-              <span>Guy Simon</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Tel Aviv Sourasky Medical Center</h4>
-            </div>
-            <div class="inst-members">
-              <span>Dafna Ben-Bashat</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Maccabi Healthcare Services</h4>
-            </div>
-            <div class="inst-members">
-              <span>Demian Halperin</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Europe -->
-      <div class="collab-region fade-in">
-        <h3 class="region-title">Europe</h3>
-        <div class="collab-region-grid">
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>University of Zurich</h4>
-              <span class="inst-count">2</span>
-            </div>
-            <div class="inst-members">
-              <span>Tobias R. Spiller</span>
-              <span>Philipp Homan</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>University of Oxford</h4>
-            </div>
-            <div class="inst-members">
-              <span>Morten Kringelbach</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>University of Glasgow</h4>
-            </div>
-            <div class="inst-members">
-              <span>Emily S. Cross</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>Helmholtz Munich</h4>
-            </div>
-            <div class="inst-members">
-              <span>Eric Schulz</span>
-            </div>
-          </div>
-          <div class="collab-institution">
-            <div class="inst-header">
-              <h4>University Medical Center Utrecht</h4>
-            </div>
-            <div class="inst-members">
-              <span>Alexander Leemans</span>
-            </div>
-          </div>
+          <p class="globe-legend-note">Hover over a point to see details.<br>Click a region button to zoom in.</p>
         </div>
       </div>
     </div>
@@ -2841,6 +2758,129 @@
         }
       });
     });
+
+  // Research accordion
+  document.querySelectorAll('.research-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const wasOpen = card.classList.contains('open');
+      document.querySelectorAll('.research-card.open').forEach(c => c.classList.remove('open'));
+      if (!wasOpen) card.classList.add('open');
+    });
+  });
+
+  // Globe.gl — Collaborations
+  (function initGlobe() {
+    const HOME_LAT = 32.76, HOME_LNG = 35.02;
+
+    const institutions = [
+      { lat: 41.31, lng: -72.93, label: 'Yale University',                       sub: '6 collaborators',                    color: '#f59e0b', size: 0.60 },
+      { lat: 42.34, lng: -71.10, label: 'Harvard Medical School',                sub: 'Nathaniel G. Harnett',               color: '#f59e0b', size: 0.42 },
+      { lat: 40.81, lng: -73.96, label: 'Columbia University',                   sub: 'Katharina Schultebraucks',           color: '#f59e0b', size: 0.42 },
+      { lat: 40.79, lng: -73.95, label: 'Mt. Sinai / Icahn School of Medicine',  sub: 'Daniela Schiller',                   color: '#f59e0b', size: 0.42 },
+      { lat: 40.74, lng: -73.97, label: 'NYU Langone',                           sub: 'Arieh Y. Shalev',                    color: '#f59e0b', size: 0.42 },
+      { lat: 33.79, lng: -84.32, label: 'Emory University',                      sub: 'Jennifer Stevens',                   color: '#f59e0b', size: 0.42 },
+      { lat: 30.62, lng: -96.33, label: 'Texas A&M University',                  sub: 'Israel Liberzon, Jony Sheynin',      color: '#f59e0b', size: 0.42 },
+      { lat: 38.99, lng: -77.10, label: 'NIMH',                                  sub: 'Daniel S. Pine',                     color: '#f59e0b', size: 0.42 },
+      { lat: 32.76, lng: 35.02,  label: 'University of Haifa',                   sub: '7 collaborators (Home Lab)',         color: '#34d399', size: 0.65 },
+      { lat: 32.11, lng: 34.80,  label: 'Tel Aviv University',                   sub: '6 collaborators',                    color: '#34d399', size: 0.58 },
+      { lat: 31.77, lng: 35.19,  label: 'Hebrew University of Jerusalem',        sub: 'Gadi Gilam, Ariel Jaffe',            color: '#34d399', size: 0.42 },
+      { lat: 31.26, lng: 34.80,  label: 'Ben-Gurion University',                 sub: 'Or Duek',                            color: '#34d399', size: 0.42 },
+      { lat: 32.17, lng: 34.84,  label: 'Reichman University',                   sub: 'Rany Abend',                         color: '#34d399', size: 0.42 },
+      { lat: 32.07, lng: 34.84,  label: 'Bar-Ilan University',                   sub: 'Guy Simon',                          color: '#34d399', size: 0.42 },
+      { lat: 32.07, lng: 34.78,  label: 'Tel Aviv Sourasky Medical Center',      sub: 'Dafna Ben-Bashat',                   color: '#34d399', size: 0.42 },
+      { lat: 32.08, lng: 34.79,  label: 'Maccabi Healthcare Services',           sub: 'Demian Halperin',                    color: '#34d399', size: 0.42 },
+      { lat: 47.38, lng:  8.55,  label: 'University of Zurich',                  sub: 'Tobias Spiller, Philipp Homan',      color: '#60a5fa', size: 0.42 },
+      { lat: 51.75, lng: -1.26,  label: 'University of Oxford',                  sub: 'Morten Kringelbach',                 color: '#60a5fa', size: 0.42 },
+      { lat: 55.87, lng: -4.29,  label: 'University of Glasgow',                 sub: 'Emily S. Cross',                     color: '#60a5fa', size: 0.42 },
+      { lat: 48.14, lng: 11.54,  label: 'Helmholtz Munich',                      sub: 'Eric Schulz',                        color: '#60a5fa', size: 0.42 },
+      { lat: 52.09, lng:  5.18,  label: 'UMC Utrecht',                           sub: 'Alexander Leemans',                  color: '#60a5fa', size: 0.42 },
+    ];
+
+    const arcs = institutions
+      .filter(d => !(d.lat === HOME_LAT && d.lng === HOME_LNG))
+      .map(d => ({
+        startLat: HOME_LAT, startLng: HOME_LNG,
+        endLat: d.lat, endLng: d.lng,
+        color: d.color,
+      }));
+
+    const ttEl = document.createElement('div');
+    ttEl.className = 'globe-tooltip';
+    const ttName = document.createElement('span');
+    ttName.className = 'globe-tooltip-name';
+    const ttSub = document.createElement('span');
+    ttSub.className = 'globe-tooltip-sub';
+    ttEl.appendChild(ttName);
+    ttEl.appendChild(ttSub);
+    document.body.appendChild(ttEl);
+
+    document.addEventListener('mousemove', e => {
+      ttEl.style.left = (e.clientX + 14) + 'px';
+      ttEl.style.top  = (e.clientY - 10) + 'px';
+    });
+
+    const isMobile = window.innerWidth < 640;
+    const globeSize = isMobile ? 300 : 480;
+
+    const globe = Globe()
+      .globeImageUrl('https://unpkg.com/three-globe@2.30.0/example/img/earth-night.jpg')
+      .backgroundColor('rgba(0,0,0,0)')
+      .width(globeSize)
+      .height(globeSize)
+      .pointsData(institutions)
+      .pointLat('lat')
+      .pointLng('lng')
+      .pointColor('color')
+      .pointRadius('size')
+      .pointAltitude(0.02)
+      .arcsData(arcs)
+      .arcStartLat('startLat')
+      .arcStartLng('startLng')
+      .arcEndLat('endLat')
+      .arcEndLng('endLng')
+      .arcColor(d => {
+        const hex = d.color.replace('#', '');
+        const r = parseInt(hex.substring(0,2), 16);
+        const g = parseInt(hex.substring(2,4), 16);
+        const b = parseInt(hex.substring(4,6), 16);
+        return [`rgba(${r},${g},${b},0.15)`, d.color];
+      })
+      .arcStroke(0.4)
+      .arcDashLength(0.4)
+      .arcDashGap(0.15)
+      .arcDashAnimateTime(3000)
+      .onPointHover(pt => {
+        if (pt) {
+          ttName.textContent = pt.label;
+          ttSub.textContent  = pt.sub;
+          ttEl.style.display = 'block';
+        } else {
+          ttEl.style.display = 'none';
+        }
+      })
+      (document.getElementById('globeViz'));
+
+    globe.controls().autoRotate      = true;
+    globe.controls().autoRotateSpeed = 0.5;
+    globe.controls().enableZoom      = false;
+    globe.pointOfView({ lat: 38, lng: -10, altitude: 1.85 }, 0);
+
+    const VIEWS = {
+      all: { lat: 38,  lng: -10, altitude: 1.85 },
+      us:  { lat: 39,  lng: -82, altitude: 0.9  },
+      il:  { lat: 32,  lng: 35,  altitude: 0.4  },
+      eu:  { lat: 51,  lng: 5,   altitude: 0.7  },
+    };
+
+    window.globeZoomTo = function(region) {
+      globe.controls().autoRotate = region === 'all';
+      globe.pointOfView(VIEWS[region], 1000);
+      document.querySelectorAll('.globe-region-btn').forEach(b => b.classList.remove('active'));
+      const map = { all: 'globeBtnAll', us: 'globeBtnUs', il: 'globeBtnIl', eu: 'globeBtnEu' };
+      const btn = document.getElementById(map[region]);
+      if (btn) btn.classList.add('active');
+    };
+  })();
   </script>
 </body>
 </html>
