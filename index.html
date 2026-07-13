@@ -550,7 +550,7 @@
     .pi-photo {
       width: 200px;
       height: 200px;
-      border-radius: 50%;
+      border-radius: var(--radius);
       background: linear-gradient(135deg, var(--primary), var(--accent));
       flex-shrink: 0;
       display: flex;
@@ -623,7 +623,7 @@
     .team-photo {
       width: 200px;
       height: 200px;
-      border-radius: 50%;
+      border-radius: var(--radius);
       background: var(--bg-alt);
       margin: 0 auto 1.25rem;
       display: flex;
@@ -1503,7 +1503,7 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#hero" class="nav-brand">
-        <img src="Lab Logo.png" alt="Lab Logo" class="nav-logo">
+        <img src="pictures/Lab Logo.png" alt="Lab Logo" class="nav-logo">
         Ben-Zion Resilience &amp; Recovery Lab
       </a>
       <ul class="nav-links">
@@ -1540,7 +1540,7 @@
   <section class="hero" id="hero">
     <div class="hero-content">
       <div class="fade-in">
-        <div class="hero-logo"><img src="Lab Logo.png" alt="Ben-Zion Lab Logo"></div>
+        <div class="hero-logo"><img src="pictures/Lab Logo.png" alt="Ben-Zion Lab Logo"></div>
         <h1>Ben-Zion Resilience &amp; Recovery Lab</h1>
       </div>
       <div class="fade-in">
@@ -1558,7 +1558,7 @@
 
   <!-- Lab Team Photo -->
   <div style="width:100%;overflow:hidden;max-height:480px;line-height:0;">
-    <img src="WhatsApp Image 2026-05-04 at 09.47.24.jpeg" alt="Ben-Zion Lab Team" style="width:100%;display:block;object-fit:cover;object-position:center 30%;max-height:480px;">
+    <img src="pictures/WhatsApp Image 2026-05-04 at 09.47.24.jpeg" alt="Ben-Zion Lab Team" style="width:100%;display:block;object-fit:cover;object-position:center 30%;max-height:480px;">
   </div>
 
   <!-- About / Vision -->
@@ -1585,7 +1585,7 @@
         </div>
       </div>
       <div class="about-image fade-in">
-        <img src="Ziv Research Profile.png" alt="Research Profile - Clinical Neuroscience of Stress &amp; Resilience">
+        <img src="pictures/Ziv Research Profile.png" alt="Research Profile - Clinical Neuroscience of Stress &amp; Resilience">
       </div>
     </div>
   </section>
@@ -1723,7 +1723,7 @@
       </div>
 
       <div class="pi-card fade-in">
-        <div class="pi-photo"><img src="ziv-headshot-500.jpg" alt="Dr. Ziv Ben-Zion"></div>
+        <div class="pi-photo"><img src="pictures/Ziv Ben-Zion Headshot.jpg" alt="Dr. Ziv Ben-Zion"></div>
         <div class="pi-info">
           <h3>Dr. Ziv Ben-Zion, PhD</h3>
           <div class="pi-role">Principal Investigator | Clinical Neuroscientist</div>
@@ -1743,37 +1743,37 @@
 
       <div class="team-grid">
         <div class="team-card fade-in">
-          <div class="team-photo"><img src="rinatia-crop.jpg" alt="Rinatia Maaravi Hesseg"></div>
+          <div class="team-photo"><img src="pictures/Rinatia Headshot.jpg" alt="Rinatia Maaravi Hesseg"></div>
           <h4>Rinatia Maaravi Hesseg, PhD</h4>
           <div class="role">Lab Manager</div>
         </div>
         <div class="team-card fade-in">
-          <div class="team-photo"><img src="daniel-crop.jpg" alt="Daniel Panitz"></div>
+          <div class="team-photo"><img src="pictures/Daniel Panitz Headshot.jpg" alt="Daniel Panitz"></div>
           <h4>Daniel Panitz, PhD</h4>
           <div class="role">Lab Manager</div>
         </div>
         <div class="team-card fade-in">
-          <div class="team-photo"><img src="Meirav.jpg" alt="Meirav Har-Even"></div>
+          <div class="team-photo"><img src="pictures/Meirav.jpg" alt="Meirav Har-Even"></div>
           <h4>Meirav Har-Even, PhD</h4>
           <div class="role">Postdoctoral Fellow</div>
         </div>
         <div class="team-card fade-in">
-          <div class="team-photo"><img src="Dalia Moallem Headshot.jpg" alt="Dalia Moallem"></div>
+          <div class="team-photo"><img src="pictures/Dalia Moallem Headshot.jpg" alt="Dalia Moallem"></div>
           <h4>Dalia Moallem</h4>
           <div class="role">PhD Student</div>
         </div>
         <div class="team-card fade-in">
-          <div class="team-photo"><img src="adrian-crop.jpg" alt="Adrian Mendelson"></div>
+          <div class="team-photo"><img src="pictures/Adrian Headshot.png" alt="Adrian Mendelson"></div>
           <h4>Adrian Mendelson</h4>
           <div class="role">MSc Student</div>
         </div>
         <div class="team-card fade-in">
-          <div class="team-photo"><img src="barr-crop.jpg" alt="Barr Alon"></div>
+          <div class="team-photo"><img src="pictures/Barr Alon Headshot.jpeg" alt="Barr Alon"></div>
           <h4>Barr Alon</h4>
           <div class="role">MSc Student</div>
         </div>
         <div class="team-card fade-in">
-          <div class="team-photo"><img src="Shir Dunsky Headshot.jpg" alt="Shir Dunsky"></div>
+          <div class="team-photo"><img src="pictures/Shir Dunsky Headshot.jpg" alt="Shir Dunsky"></div>
           <h4>Shir Dunsky</h4>
           <div class="role">MSc Student</div>
         </div>
@@ -1817,7 +1817,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2026" data-first="true">
-          <img class="pub-journal-img" src="npj-artificial-intelligence.svg" alt="npj Artificial Intelligence">
+          <img class="pub-journal-img" src="pictures/npj-artificial-intelligence.svg" alt="npj Artificial Intelligence">
           <div>
             <h4>Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in Consumer Decision-Making</h4>
             <div class="pub-meta">
@@ -2682,7 +2682,7 @@
         </div>
 
         <div class="team-photo-banner fade-in">
-          <img src="First Lab Meeting 17.11.25.jpg" alt="First Lab Meeting, November 2025 - Ben-Zion Resilience &amp; Recovery Lab">
+          <img src="pictures/First Lab Meeting 17.11.25.jpg" alt="First Lab Meeting, November 2025 - Ben-Zion Resilience &amp; Recovery Lab">
           <p class="photo-caption">First Lab Meeting, November 2025</p>
         </div>
       </div>
