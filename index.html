@@ -21,8 +21,8 @@
   <style>
     :root {
       --primary: #0a2647;
-      --accent: #2e8b8b;
-      --accent-hover: #247070;
+      --accent: #1f7a7a;
+      --accent-hover: #185c5c;
       --bg-light: #ffffff;
       --bg-alt: #f5f7fa;
       --text: #1a1a2e;
@@ -39,6 +39,39 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html { scroll-behavior: smooth; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+      .fade-in { opacity: 1 !important; transform: none !important; }
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 8px;
+      top: -60px;
+      z-index: 3000;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 8px; }
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -1499,6 +1532,7 @@
   </style>
 </head>
 <body>
+  <a href="#hero" class="skip-link">Skip to main content</a>
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="container">
@@ -1537,7 +1571,7 @@
   </div>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
+  <section class="hero" id="hero" tabindex="-1">
     <div class="hero-content">
       <div class="fade-in">
         <div class="hero-logo"><img src="pictures/Lab Logo.png" alt="Ben-Zion Lab Logo"></div>
@@ -1843,7 +1877,7 @@
         <div class="pub-year fade-in">2025</div>
 
         <div class="pub-card fade-in" data-year="2025" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/11/cover.tif_.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/11/cover.tif_.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Dissecting Fear and Emotional Pain in PTSD: From Symptom Networks to Neural Signatures</h4>
             <div class="pub-meta">
@@ -1855,7 +1889,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2025">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Psychedelics and Collective Trauma: Multisystemic Resilience and Recovery Pathways Among Nova Festival Survivors</h4>
             <div class="pub-meta">
@@ -1867,7 +1901,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2025" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/07/Capture.png" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/07/Capture.png" alt="" aria-hidden="true">
           <div>
             <h4>Why We Need Mandatory Safeguards for Emotionally Responsive AI</h4>
             <div class="pub-meta">
@@ -1879,7 +1913,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2025">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/07/psychological_medicine.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2025/07/psychological_medicine.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Brain Network Dynamics Following Induced Acute Stress: A Neural Marker of Psychological Vulnerability</h4>
             <div class="pub-meta">
@@ -1891,7 +1925,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2025" data-first="true">
-          <img class="pub-journal-img" src="https://pbs.twimg.com/profile_images/1875721159867609089/KTHJ-x7M_400x400.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://pbs.twimg.com/profile_images/1875721159867609089/KTHJ-x7M_400x400.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Assessing and Alleviating State Anxiety in Large Language Models</h4>
             <div class="pub-meta">
@@ -1903,7 +1937,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2025" data-first="true">
-          <img class="pub-journal-img" src="https://dladata.com/img/products/2/jamano.png" alt="Journal">
+          <img class="pub-journal-img" src="https://dladata.com/img/products/2/jamano.png" alt="" aria-hidden="true">
           <div>
             <h4>Connectome-Based Prediction of PTSD Development in Recent Trauma Survivors</h4>
             <div class="pub-meta">
@@ -1915,7 +1949,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2025" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/06/AR-Psychology.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/06/AR-Psychology.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Representation of Anticipated Rewards and Punishments in the Human Brain</h4>
             <div class="pub-meta">
@@ -1929,7 +1963,7 @@
         <div class="pub-year fade-in">2024</div>
 
         <div class="pub-card fade-in" data-year="2024">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="" aria-hidden="true">
           <div>
             <h4>Neuroimaging of PTSD in Adults and Youth: Progress Over the Last Decade</h4>
             <div class="pub-meta">
@@ -1941,7 +1975,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2024" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Structural Neuroimaging of Hippocampus and Amygdala Subregions in PTSD: A Scoping Review</h4>
             <div class="pub-meta">
@@ -1953,7 +1987,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2024">
-          <img class="pub-journal-img" src="https://dladata.com/img/products/2/jamano.png" alt="Journal">
+          <img class="pub-journal-img" src="https://dladata.com/img/products/2/jamano.png" alt="" aria-hidden="true">
           <div>
             <h4>Transitions Between Emotional States in Trauma-Exposed Individuals With and Without PTSD</h4>
             <div class="pub-meta">
@@ -1968,7 +2002,7 @@
         <div class="pub-hidden" id="morePubs">
 
         <div class="pub-card fade-in" data-year="2024">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Greater Early Post-Trauma Activation in Right Inferior Frontal Gyrus Predicts Recovery from PTSD</h4>
             <div class="pub-meta">
@@ -1980,7 +2014,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2024">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/08/Psy-Research-Neuro.jpeg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/08/Psy-Research-Neuro.jpeg" alt="" aria-hidden="true">
           <div>
             <h4>Post-Treatment Alterations in White Matter Integrity in PTSD</h4>
             <div class="pub-meta">
@@ -1992,7 +2026,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2024">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Unraveling PTSD: Symptom Cluster Change During and 1 Year After Veterans' Residential Treatment</h4>
             <div class="pub-meta">
@@ -2004,7 +2038,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2024">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/10/Psychopharmacology.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/10/Psychopharmacology.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Effects of a Dissociative Drug on Fronto-Limbic Resting-State Functional Connectivity in PTSD</h4>
             <div class="pub-meta">
@@ -2016,7 +2050,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2024">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/08/Neuroinformatics.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/08/Neuroinformatics.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Interdisciplinary and Collaborative Training in Neuroscience: Insights from the Human Brain Project</h4>
             <div class="pub-meta">
@@ -2030,7 +2064,7 @@
         <div class="pub-year fade-in">2023</div>
 
         <div class="pub-card fade-in" data-year="2023" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/AJP.png" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/AJP.png" alt="" aria-hidden="true">
           <div>
             <h4>Are We There Yet? Evaluating Neuroimaging-Based Biotypes of Psychiatric Vulnerability After Trauma</h4>
             <div class="pub-meta">
@@ -2042,7 +2076,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2023" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Neuroscientific Account of Guilt- and Shame-Driven PTSD Phenotypes</h4>
             <div class="pub-meta">
@@ -2054,7 +2088,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2023">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Limbic Self-Neuromodulation as a Novel Treatment for Emotional Dysregulation in PMDD</h4>
             <div class="pub-meta">
@@ -2066,7 +2100,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2023">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Correlates of Avoidance Coping in Trauma-Exposed U.S. Military Veterans</h4>
             <div class="pub-meta">
@@ -2078,7 +2112,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2023">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Changes in Mental Health Among U.S. Military Veterans During the COVID-19 Pandemic</h4>
             <div class="pub-meta">
@@ -2092,7 +2126,7 @@
         <div class="pub-year fade-in">2022</div>
 
         <div class="pub-card fade-in" data-year="2022" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="" aria-hidden="true">
           <div>
             <h4>Longitudinal Volumetric Evaluation of Hippocampus and Amygdala Subregions in Recent Trauma Survivors</h4>
             <div class="pub-meta">
@@ -2104,7 +2138,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2022" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Molecular_Psychiatry.gif" alt="" aria-hidden="true">
           <div>
             <h4>Assessment of Early Neurocognitive Functioning Increases the Accuracy of Predicting Chronic PTSD Risk</h4>
             <div class="pub-meta">
@@ -2116,7 +2150,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2022" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Mapping the Availability of Translated Versions of PTSD Screening Questionnaires</h4>
             <div class="pub-meta">
@@ -2128,7 +2162,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2022">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/NPP.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/NPP.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Emotional Numbing in PTSD Is Associated with Lower Amygdala Reactivity to Pain</h4>
             <div class="pub-meta">
@@ -2140,7 +2174,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2022">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JPR.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Delirium Screening with Machine Learning Based on Routinely Collected Nursing Data</h4>
             <div class="pub-meta">
@@ -2154,7 +2188,7 @@
         <div class="pub-year fade-in">2021</div>
 
         <div class="pub-card fade-in" data-year="2021" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Neural Responsivity to Reward vs. Punishment Shortly After Trauma Predicts Long-Term PTSD Development</h4>
             <div class="pub-meta">
@@ -2166,7 +2200,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2021" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/12/Frontiers-Psychiatry.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/12/Frontiers-Psychiatry.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Social Robots for Supporting PTSD Diagnosis and Treatment</h4>
             <div class="pub-meta">
@@ -2178,7 +2212,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2021">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="" aria-hidden="true">
           <div>
             <h4>COVID-19 Changes in Mood and Anxiety Mediate Resilience and Symptoms in Sexual Assault Survivors</h4>
             <div class="pub-meta">
@@ -2190,7 +2224,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2021">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Neuroimage.gif" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Neuroimage.gif" alt="" aria-hidden="true">
           <div>
             <h4>Pairwise Affinity Models of fMRI Connectivity Predict PTSD Symptom Trajectories</h4>
             <div class="pub-meta">
@@ -2204,7 +2238,7 @@
         <div class="pub-year fade-in">2020</div>
 
         <div class="pub-card fade-in" data-year="2020" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Translational-Psychiatry.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Translational-Psychiatry.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Multi-Domain Potential Biomarkers for PTSD Severity in Recent Trauma Survivors</h4>
             <div class="pub-meta">
@@ -2216,7 +2250,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2020" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/BP-CNNI.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Neuroanatomical Risk Factors for PTSD in Recent Trauma Survivors</h4>
             <div class="pub-meta">
@@ -2230,7 +2264,7 @@
         <div class="pub-year fade-in">2019</div>
 
         <div class="pub-card fade-in" data-year="2019" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/EJPT.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Neurobehavioral Moderators of PTSD Trajectories: Study Protocol of a Prospective MRI Study</h4>
             <div class="pub-meta">
@@ -2242,7 +2276,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2019">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Emotion.gif" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Emotion.gif" alt="" aria-hidden="true">
           <div>
             <h4>The Anger-Infused Ultimatum Game: A Reliable and Valid Paradigm to Induce and Assess Anger</h4>
             <div class="pub-meta">
@@ -2256,7 +2290,7 @@
         <div class="pub-year fade-in">2018</div>
 
         <div class="pub-card fade-in" data-year="2018" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/12/Frontiers-Psychiatry.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2024/12/Frontiers-Psychiatry.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Cognitive Flexibility Predicts PTSD Symptoms: Observational and Interventional Studies</h4>
             <div class="pub-meta">
@@ -2268,7 +2302,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2018">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Cortex.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/Cortex.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Attenuating Anger and Aggression with Neuromodulation of the vmPFC</h4>
             <div class="pub-meta">
@@ -2280,7 +2314,7 @@
         </div>
 
         <div class="pub-card fade-in" data-year="2018" data-first="true">
-          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="Journal">
+          <img class="pub-journal-img" src="https://campuspress.yale.edu/zivbenzion/files/2023/07/JAD-1.jpg" alt="" aria-hidden="true">
           <div>
             <h4>Free Viewing of Sad and Happy Faces in Depression: A Potential Target for Attention Bias Modification</h4>
             <div class="pub-meta">
@@ -2784,6 +2818,11 @@
           const el = entry.target;
           const target = parseInt(el.dataset.target);
           const suffix = el.dataset.suffix || '';
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            el.textContent = target + suffix;
+            countObserver.unobserve(el);
+            return;
+          }
           let current = 0;
           const step = Math.ceil(target / 40);
           const timer = setInterval(() => {
@@ -2998,7 +3037,7 @@
       })
       (document.getElementById('globeViz'));
 
-    globe.controls().autoRotate      = true;
+    globe.controls().autoRotate      = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     globe.controls().autoRotateSpeed = 0.5;
     globe.controls().enableZoom      = false;
     globe.pointOfView({ lat: 38, lng: -10, altitude: 1.85 }, 0);
@@ -3011,7 +3050,7 @@
     };
 
     window.globeZoomTo = function(region) {
-      globe.controls().autoRotate = region === 'all';
+      globe.controls().autoRotate = region === 'all' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       globe.pointOfView(VIEWS[region], 1000);
       document.querySelectorAll('.globe-region-btn').forEach(b => b.classList.remove('active'));
       const map = { all: 'globeBtnAll', us: 'globeBtnUs', il: 'globeBtnIl', eu: 'globeBtnEu' };
